@@ -20,9 +20,9 @@ void inputas(vector<Studentas>& grupe) {
         bool vardasGeras = false;
         while (!vardasGeras) {
             cout << "Iveskite varda ir pavarde: ";
-            cin >> A.vardas >> A.pavarde;
+            cin >> std::ws; string v, p; cin >> v >> p; A.setVardas(v); A.setPavarde(p);
 
-            if (!arTikRaides(A.vardas) || !arTikRaides(A.pavarde)) {
+            if (!arTikRaides(A.getVardas()) || !arTikRaides(A.getPavarde())) {
                 cout << "Klaida! Vardas ir pavarde turi buti sudaryti tik is raidziu!\n";
                 cin.clear();
             }
@@ -33,7 +33,7 @@ void inputas(vector<Studentas>& grupe) {
 
         cout << string(80, '-') << "\n";
         cout << "Iveskite semestro ivertinimus (0-10). Iveskite -1 kad baigtumete: \n";
-        A.paz.reserve(15); // Rezervuojama vieta pazymiams (sumazina atminties reallokacijas)
+        A.reservePaz(15); // Rezervuojama vieta pazymiams (sumazina atminties reallokacijas)
         int temp;
         while (true) {
             cout << "Iveskite pazymi (arba -1 kad baigtumete): ";
@@ -49,7 +49,7 @@ void inputas(vector<Studentas>& grupe) {
                 cout << "Klaida! Pazymys turi buti nuo 0 iki 10!\n";
             }
             else {
-                A.paz.push_back(temp);
+                A.addPaz(temp);
             }
         }
 
@@ -58,35 +58,35 @@ void inputas(vector<Studentas>& grupe) {
         bool egzaminasTeisingas = false;
         while (!egzaminasTeisingas) {
             cout << "Iveskite egzamina (0-10): ";
-            if (!(cin >> A.egz)) {
+            int e; if (!(cin >> e)) {
                 cout << "Klaida! Iveskite skaiciu!\n";
                 cin.clear();
                 cin.ignore(numeric_limits<streamsize>::max(), '\n');
             }
-            else if (A.egz < 0 || A.egz > 10) {
+            else if (e < 0 || e > 10) {
                 cout << "Klaida! Egzaminas turi buti nuo 0 iki 10!\n";
             }
             else {
-                egzaminasTeisingas = true;
+                A.setEgz(e); egzaminasTeisingas = true;
             }
         }
         cout << string(80, '-') << "\n";
 
         // Vidurkio skaiciavimas
-        if (!A.paz.empty()) {
-            double vid = vidurkis(A.paz);
-            A.rez = galutinisBalas(vid, A.egz);
+        if (!A.isPazEmpty()) {
+            double vid = vidurkis(A.getPaz());
+            A.setRez(galutinisBalas(vid, A.getEgz()));
             // Medianos skaiciavimas
-            double med = mediana(A.paz);
-            A.med = galutinisBalas(med, A.egz);
+            double med = mediana(A.getPaz());
+            A.setMed(galutinisBalas(med, A.getEgz()));
         }
         else {
-            A.rez = A.egz * 0.6;
-            A.med = A.egz * 0.6;
+            A.setRez(A.getEgz() * 0.6);
+            A.setMed(A.getEgz() * 0.6);
         }
 
         grupe.push_back(A);
-        A.paz.clear();
+        A.clearPaz();
 
         // Klausimas ar testi rankini generavima
         char atsakymas;

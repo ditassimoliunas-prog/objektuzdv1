@@ -51,22 +51,22 @@ void outputas(vector<Studentas>& grupe) {
     switch (pasirinkimas) {
     case 1:
         sort(grupe.begin(), grupe.end(), [](const Studentas& a, const Studentas& b) {
-            return a.vardas < b.vardas;
+            return a.getVardas() < b.getVardas();
             });
         break;
     case 2:
         sort(grupe.begin(), grupe.end(), [](const Studentas& a, const Studentas& b) {
-            return a.pavarde < b.pavarde;
+            return a.getPavarde() < b.getPavarde();
             });
         break;
     case 3:
         sort(grupe.begin(), grupe.end(), [](const Studentas& a, const Studentas& b) {
-            return a.rez < b.rez;
+            return a.getRez() < b.getRez();
             });
         break;
     case 4:
         sort(grupe.begin(), grupe.end(), [](const Studentas& a, const Studentas& b) {
-            return a.med < b.med;
+            return a.getMed() < b.getMed();
             });
         break;
     default:
@@ -85,9 +85,9 @@ void outputas(vector<Studentas>& grupe) {
 
     // Studentu duomenys
     for (const auto& A : grupe) {
-        cout << left << setw(20) << A.vardas << setw(20) << A.pavarde
-            << setw(20) << fixed << setprecision(2) << A.rez
-            << setw(20) << fixed << setprecision(2) << A.med << "\n";
+        cout << left << setw(20) << A.getVardas() << setw(20) << A.getPavarde()
+            << setw(20) << fixed << setprecision(2) << A.getRez()
+            << setw(20) << fixed << setprecision(2) << A.getMed() << "\n";
     }
 
     cout << string(80, '-') << "\n";

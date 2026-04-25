@@ -48,9 +48,9 @@ void generuotiPaz(vector<Studentas>& grupe) {
         bool vardasGeras = false;
         while (!vardasGeras) {
             cout << "Iveskite varda ir pavarde: ";
-            cin >> A.vardas >> A.pavarde;
+            cin >> std::ws; string v, p; cin >> v >> p; A.setVardas(v); A.setPavarde(p);
 
-            if (!arTikRaides(A.vardas) || !arTikRaides(A.pavarde)) {
+            if (!arTikRaides(A.getVardas()) || !arTikRaides(A.getPavarde())) {
                 cout << "Klaida! Vardas ir pavarde turi buti sudaryti tik is raidziu!\n";
                 cin.clear();
             }
@@ -63,33 +63,33 @@ void generuotiPaz(vector<Studentas>& grupe) {
 
         // Automatiskai generuojamas atsitiktinis pazymiu kiekis (3-10)
         int n = rand() % 8 + 3;
-        A.paz.reserve(n); // Atminties rezervacija pazymiams
+        A.reservePaz(n); // Atminties rezervacija pazymiams
 
         // Automatiskai generuojami pazymiai
         cout << "Sugeneruota " << n << " pazymiu: ";
         for (int i = 0; i < n; i++) {
             int temp = generuotiPazymi();
-            A.paz.push_back(temp);
+            A.addPaz(temp);
             cout << temp << " ";
         }
         cout << "\n";
 
         // Automatiskai generuojamas egzaminas
-        A.egz = generuotiEgzamina();
-        cout << "Egzamino ivertinimas: " << A.egz << "\n";
+        A.setEgz(generuotiEgzamina());
+        cout << "Egzamino ivertinimas: " << A.getEgz() << "\n";
         cout << string(80, '-') << "\n";
 
         // Vidurkio skaiciavimas
-        if (!A.paz.empty()) {
-            double vid = vidurkis(A.paz);
-            A.rez = galutinisBalas(vid, A.egz);
+        if (!A.isPazEmpty()) {
+            double vid = vidurkis(A.getPaz());
+            A.setRez(galutinisBalas(vid, A.getEgz()));
             // Medianos skaiciavimas
-            double med = mediana(A.paz);
-            A.med = galutinisBalas(med, A.egz);
+            double med = mediana(A.getPaz());
+            A.setMed(galutinisBalas(med, A.getEgz()));
         }
         else {
-            A.rez = A.egz * 0.6;
-            A.med = A.egz * 0.6;
+            A.setRez(A.getEgz() * 0.6);
+            A.setMed(A.getEgz() * 0.6);
         }
 
         grupe.push_back(A);
@@ -163,48 +163,48 @@ void generuotiVardIrPav(vector<Studentas>& grupe) {
         if (lytis == 0) {
             int vardIndex = rand() % vyruVard.size();
             int pavIndex = rand() % vyruPav.size();
-            A.vardas = vyruVard[vardIndex];
-            A.pavarde = vyruPav[pavIndex];
+            A.setVardas(vyruVard[vardIndex]);
+            A.setPavarde(vyruPav[pavIndex]);
         }
         else {
             int vardIndex = rand() % motVard.size();
             int pavIndex = rand() % motPav.size();
-            A.vardas = motVard[vardIndex];
-            A.pavarde = motPav[pavIndex];
+            A.setVardas(motVard[vardIndex]);
+            A.setPavarde(motPav[pavIndex]);
         }
 
-        cout << "Sugeneruotas vardas ir pavarde: " << A.vardas << " " << A.pavarde << "\n";
+        cout << "Sugeneruotas vardas ir pavarde: " << A.getVardas() << " " << A.getPavarde() << "\n";
         cout << string(80, '-') << "\n";
 
         // Automatiskai generuojamas atsitiktinis pazymiu kiekis (3-10)
         int n = rand() % 8 + 3;
-        A.paz.reserve(n); // Atminties rezervacija pazymiams
+        A.reservePaz(n); // Atminties rezervacija pazymiams
 
         // Automatiskai sugeneruojami pazymiai
         cout << "Sugeneruota " << n << " pazymiu: ";
         for (int i = 0; i < n; i++) {
             int temp = generuotiPazymi();
-            A.paz.push_back(temp);
+            A.addPaz(temp);
             cout << temp << " ";
         }
         cout << "\n";
 
         // Automatiskai sugeneruojamas egzaminas
-        A.egz = generuotiEgzamina();
-        cout << "Egzamino ivertinimas: " << A.egz << "\n";
+        A.setEgz(generuotiEgzamina());
+        cout << "Egzamino ivertinimas: " << A.getEgz() << "\n";
         cout << string(80, '-') << "\n";
 
         // Vidurkio skaiciavimas
-        if (!A.paz.empty()) {
-            double vid = vidurkis(A.paz);
-            A.rez = galutinisBalas(vid, A.egz);
+        if (!A.isPazEmpty()) {
+            double vid = vidurkis(A.getPaz());
+            A.setRez(galutinisBalas(vid, A.getEgz()));
             // Medianos skaiciavimas
-            double med = mediana(A.paz);
-            A.med = galutinisBalas(med, A.egz);
+            double med = mediana(A.getPaz());
+            A.setMed(galutinisBalas(med, A.getEgz()));
         }
         else {
-            A.rez = A.egz * 0.6;
-            A.med = A.egz * 0.6;
+            A.setRez(A.getEgz() * 0.6);
+            A.setMed(A.getEgz() * 0.6);
         }
 
         grupe.push_back(A);
@@ -261,8 +261,8 @@ void skaitytiIsFailo(vector<Studentas>& grupe) {
         // Skaitomi studentai
         while (failas >> eilute) {
             Studentas A;
-            A.vardas = eilute;
-            failas >> A.pavarde;
+            A.setVardas(eilute);
+            failas >> A.getPavarde();
 
             vector<int> paz;
             paz.reserve(15); // Rezervuojama talpa (~15 pazymiu dazniausiai pakanka)
@@ -273,11 +273,11 @@ void skaitytiIsFailo(vector<Studentas>& grupe) {
             }
 
             if (!paz.empty()) {
-                A.egz = paz.back();
+                A.setEgz(paz.back());
                 paz.pop_back();
-                A.paz = paz;
-                A.rez = galutinisBalas(vidurkis(A.paz), A.egz);
-                A.med = galutinisBalas(mediana(A.paz), A.egz);
+                A.setPaz(paz);
+                A.setRez(galutinisBalas(vidurkis(A.getPaz()), A.getEgz()));
+                A.setMed(galutinisBalas(mediana(A.getPaz()), A.getEgz()));
                 grupe.push_back(A);
             }
             failas.ignore(numeric_limits<streamsize>::max(), '\n');
@@ -349,22 +349,22 @@ void rasytIFaila(vector<Studentas>& grupe) {
     switch (pasirinkimas) {
     case 1:
         sort(grupe.begin(), grupe.end(), [](const Studentas& a, const Studentas& b) {
-            return a.vardas < b.vardas;
+            return a.getVardas() < b.getVardas();
             });
         break;
     case 2:
         sort(grupe.begin(), grupe.end(), [](const Studentas& a, const Studentas& b) {
-            return a.pavarde < b.pavarde;
+            return a.getPavarde() < b.getPavarde();
             });
         break;
     case 3:
         sort(grupe.begin(), grupe.end(), [](const Studentas& a, const Studentas& b) {
-            return a.rez < b.rez;
+            return a.getRez() < b.getRez();
             });
         break;
     case 4:
         sort(grupe.begin(), grupe.end(), [](const Studentas& a, const Studentas& b) {
-            return a.med < b.med;
+            return a.getMed() < b.getMed();
             });
         break;
     default:
@@ -398,9 +398,9 @@ void rasytIFaila(vector<Studentas>& grupe) {
 
     // Studentu duomenys
     for (const auto& A : grupe) {
-        failas << left << setw(20) << A.vardas << setw(20) << A.pavarde
-            << setw(20) << fixed << setprecision(2) << A.rez
-            << setw(20) << fixed << setprecision(2) << A.med << "\n";
+        failas << left << setw(20) << A.getVardas() << setw(20) << A.getPavarde()
+            << setw(20) << fixed << setprecision(2) << A.getRez()
+            << setw(20) << fixed << setprecision(2) << A.getMed() << "\n";
     }
 
     failas.close();

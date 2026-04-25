@@ -145,9 +145,9 @@ void inputas(Studentas grupe[], int& grupesDydis) {
         bool vardasGeras = false;
         while (!vardasGeras) {
             cout << "Iveskite varda ir pavarde: ";
-            cin >> A.vardas >> A.pavarde;
+            cin >> std::ws; string v, p; in >> v >> p; A.setVardas(v); A.setPavarde(p);
 
-            if (!arTikRaides(A.vardas) || !arTikRaides(A.pavarde)) {
+            if (!arTikRaides(A.getVardas()) || !arTikRaides(A.getPavarde())) {
                 cout << "Klaida! Vardas ir pavarde turi buti sudaryti tik is raidziu!" << endl;
                 cin.clear();
             }
@@ -184,20 +184,20 @@ void inputas(Studentas grupe[], int& grupesDydis) {
                     pazymisTeisingas = true;
                 }
             }
-            A.paz[i] = temp;
+            A.getPaz()[i] = temp;
             sum += temp;
         }
-        A.pazSkaicius = n;
+        A.getPaz()Skaicius = n;
 
         bool egzaminasTeisingas = false;
         while (!egzaminasTeisingas) {
             cout << "Iveskite egzamina (0-10): ";
-            if (!(cin >> A.egz)) {
+            if (!(cin >> A.getEgz())) {
                 cout << "Klaida! Iveskite skaiciu!" << endl;
                 cin.clear();
                 cin.ignore(numeric_limits<streamsize>::max(), '\n');
             }
-            else if (A.egz < 0 || A.egz > 10) {
+            else if (A.getEgz() < 0 || A.getEgz() > 10) {
                 cout << "Klaida! Egzaminas turi buti nuo 0 iki 10!" << endl;
             }
             else {
@@ -207,10 +207,10 @@ void inputas(Studentas grupe[], int& grupesDydis) {
         cout << "---------------------------------------------------" << endl;
 
         // Vidurkio skaiciavimas
-        A.rez = sum * 1.0 / (n * 1.0) * 0.4 + A.egz * 0.6;
+        A.setRez(sum * 1.0 / (n * 1.0) * 0.4 + A.getEgz() * 0.6);
 
         // Medianos skaiciavimas
-        A.med = mediana(A.paz, A.pazSkaicius) * 0.4 + A.egz * 0.6;
+        A.setMed(mediana(A.getPaz(), A.getPaz()Skaicius) * 0.4 + A.getEgz() * 0.6);
 
         grupesDydis++;
     }
@@ -239,9 +239,9 @@ void generuotiPaz(Studentas grupe[], int& grupesDydis) {
         bool vardasGeras = false;
         while (!vardasGeras) {
             cout << "Iveskite varda ir pavarde: ";
-            cin >> A.vardas >> A.pavarde;
+            cin >> std::ws; string v, p; in >> v >> p; A.setVardas(v); A.setPavarde(p);
 
-            if (!arTikRaides(A.vardas) || !arTikRaides(A.pavarde)) {
+            if (!arTikRaides(A.getVardas()) || !arTikRaides(A.getPavarde())) {
                 cout << "Klaida! Vardas ir pavarde turi buti sudaryti tik is raidziu!" << endl;
                 cin.clear();
             }
@@ -265,23 +265,23 @@ void generuotiPaz(Studentas grupe[], int& grupesDydis) {
         cout << "Pazymiu ivertinmai: ";
         for (int i = 0; i < n; i++) {
             int temp = rand() % 11;
-            A.paz[i] = temp;
+            A.getPaz()[i] = temp;
             sum += temp;
             cout << temp << " ";
         }
-        A.pazSkaicius = n;
+        A.getPaz()Skaicius = n;
         cout << endl;
 
         // Automatiskai generuojamas egzaminas
-        A.egz = rand() % 11;
-        cout << "Egzamino ivertinimas: " << A.egz << endl;
+        A.setEgz(rand() % 11);
+        cout << "Egzamino ivertinimas: " << A.getEgz() << endl;
         cout << "---------------------------------------------------" << endl;
 
         // Vidurkio skaiciavimas
-        A.rez = sum * 1.0 / (n * 1.0) * 0.4 + A.egz * 0.6;
+        A.setRez(sum * 1.0 / (n * 1.0) * 0.4 + A.getEgz() * 0.6);
 
         // Medianos skaiciavimas
-        A.med = mediana(A.paz, A.pazSkaicius) * 0.4 + A.egz * 0.6;
+        A.setMed(mediana(A.getPaz(), A.getPaz()Skaicius) * 0.4 + A.getEgz() * 0.6);
 
         grupesDydis++;
     }
@@ -372,17 +372,17 @@ void generuotiVardIrPav(Studentas grupe[], int& grupesDydis) {
         if (lytis == 'V' || lytis == 'v') {
             int vardIndex = rand() % vyruVardSkaicius;
             int pavIndex = rand() % vyruPavSkaicius;
-            A.vardas = vyruVard[vardIndex];
-            A.pavarde = vyruPav[pavIndex];
+            A.setVardas(vyruVard[vardIndex]);
+            A.setPavarde(vyruPav[pavIndex]);
         }
         else {
             int vardIndex = rand() % motVardSkaicius;
             int pavIndex = rand() % motPavSkaicius;
-            A.vardas = motVard[vardIndex];
-            A.pavarde = motPav[pavIndex];
+            A.setVardas(motVard[vardIndex]);
+            A.setPavarde(motPav[pavIndex]);
         }
 
-        cout << "Sugeneruotas vardas ir pavarde: " << A.vardas << " " << A.pavarde << endl;
+        cout << "Sugeneruotas vardas ir pavarde: " << A.getVardas() << " " << A.getPavarde() << endl;
         cout << "---------------------------------------------------" << endl;
 
         // Klausimas kiek pazymiu sugeneruoti
@@ -400,23 +400,23 @@ void generuotiVardIrPav(Studentas grupe[], int& grupesDydis) {
         cout << "Pazymiu ivertinimai: ";
         for (int i = 0; i < n; i++) {
             int temp = rand() % 11;
-            A.paz[i] = temp;
+            A.getPaz()[i] = temp;
             sum += temp;
             cout << temp << " ";
         }
-        A.pazSkaicius = n;
+        A.getPaz()Skaicius = n;
         cout << endl;
 
         // Automatiskai sugeneruojamas egzaminas
-        A.egz = rand() % 11;
-        cout << "Egzamino ivertinimas: " << A.egz << endl;
+        A.setEgz(rand() % 11);
+        cout << "Egzamino ivertinimas: " << A.getEgz() << endl;
         cout << "---------------------------------------------------" << endl;
 
         // Vidurkio skaiciavimas
-        A.rez = sum * 1.0 / (n * 1.0) * 0.4 + A.egz * 0.6;
+        A.setRez(sum * 1.0 / (n * 1.0) * 0.4 + A.getEgz() * 0.6);
 
         // Medianos skaiciavimas
-        A.med = mediana(A.paz, A.pazSkaicius) * 0.4 + A.egz * 0.6;
+        A.setMed(mediana(A.getPaz(), A.getPaz()Skaicius) * 0.4 + A.getEgz() * 0.6);
 
         grupesDydis++;
     }
@@ -427,8 +427,8 @@ void outputas(const Studentas grupe[], int grupesDydis) {
         const Studentas& A = grupe[i];
         cout << left << setw(10) << "Vardas " << left << setw(20) << "Pavarde "
             << left << setw(30) << "Galutinis (Vid.) " << left << setw(40) << "Galutinis (Med.) " << endl;
-        cout << left << setw(10) << A.vardas << left << setw(20) << A.pavarde;
-        cout << left << setw(30) << fixed << setprecision(2) << A.rez
-            << left << setw(40) << fixed << setprecision(2) << A.med << endl;
+        cout << left << setw(10) << A.getVardas() << left << setw(20) << A.getPavarde();
+        cout << left << setw(30) << fixed << setprecision(2) << A.getRez()
+            << left << setw(40) << fixed << setprecision(2) << A.getMed() << endl;
     }
 }
