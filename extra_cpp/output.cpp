@@ -50,24 +50,16 @@ void outputas(vector<Studentas>& grupe) {
     // Rusiuojama pagal pasirinkima
     switch (pasirinkimas) {
     case 1:
-        sort(grupe.begin(), grupe.end(), [](const Studentas& a, const Studentas& b) {
-            return a.getVardas() < b.getVardas();
-            });
+        sort(grupe.begin(), grupe.end(), comparePagalVarda);
         break;
     case 2:
-        sort(grupe.begin(), grupe.end(), [](const Studentas& a, const Studentas& b) {
-            return a.getPavarde() < b.getPavarde();
-            });
+        sort(grupe.begin(), grupe.end(), comparePagalPavarde);
         break;
     case 3:
-        sort(grupe.begin(), grupe.end(), [](const Studentas& a, const Studentas& b) {
-            return a.getRez() < b.getRez();
-            });
+        sort(grupe.begin(), grupe.end(), comparePagalReza);
         break;
     case 4:
-        sort(grupe.begin(), grupe.end(), [](const Studentas& a, const Studentas& b) {
-            return a.getMed() < b.getMed();
-            });
+        sort(grupe.begin(), grupe.end(), comparePagalMeda);
         break;
     default:
         cout << "Klaida! Neteisingas pasirinkimas. Rodoma be rusiavimo.\n";

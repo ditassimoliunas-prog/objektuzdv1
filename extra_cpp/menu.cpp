@@ -50,7 +50,7 @@ void menu() {
         switch (pas) {
         case 1:
             try {
-                cout << "1. Ivesti duomenis ranka \n";
+                cout << "1. Ivesti duomenisss ranka \n";
                 inputas(grupe);
                 outputas(grupe);
                 grupe.clear();

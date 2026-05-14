@@ -26,6 +26,7 @@ set(SOURCES
     extra_cpp/menu.cpp 
     extra_cpp/output.cpp 
     extra_cpp/testavimas.cpp
+    extra_cpp/Studentas.cpp
 )
 
 # Sukuriame ezkekutuojamąjį (executable) failą

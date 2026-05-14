@@ -72,6 +72,7 @@ events:
         - "C:\\MinGW\\bin"
         - "C:\\msys64\\usr\\bin"
         - "C:\\Users\\ditas\\.dotnet\\tools"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\PrivateAssemblies\\runtimes\\win-x64\\native"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
@@ -102,9 +103,9 @@ events:
       The output was:
       0
       MSBuild version 18.5.4+cb4e32d21 for .NET Framework
-      Build started 4/25/2026 7:21:40 PM.
+      Build started 5/6/2026 2:54:29 PM.
       
-      Project "C:\\Users\\ditas\\source\\repos\\objektuzd\\objekt1uzd\\build\\CMakeFiles\\4.2.3-msvc3\\CompilerIdC\\CompilerIdC.vcxproj" on node 1 (default targets).
+      Project "C:\\Users\\ditas\\source\\repos\\ditassimoliunas-prog\\objektuzdv1\\build\\CMakeFiles\\4.2.3-msvc3\\CompilerIdC\\CompilerIdC.vcxproj" on node 1 (default targets).
       PrepareForBuild:
         Creating directory "Debug\\".
         Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
@@ -117,7 +118,7 @@ events:
         CMakeCCompilerId.c
       Link:
         C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdC.lib" /MACHINE:X64 Debug\\CMakeCCompilerId.obj
-        CompilerIdC.vcxproj -> C:\\Users\\ditas\\source\\repos\\objektuzd\\objekt1uzd\\build\\CMakeFiles\\4.2.3-msvc3\\CompilerIdC\\CompilerIdC.exe
+        CompilerIdC.vcxproj -> C:\\Users\\ditas\\source\\repos\\ditassimoliunas-prog\\objektuzdv1\\build\\CMakeFiles\\4.2.3-msvc3\\CompilerIdC\\CompilerIdC.exe
       PostBuildEvent:
         for %%i in (cl.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
         :VCEnd
@@ -125,13 +126,13 @@ events:
       FinalizeBuildStatus:
         Deleting file "Debug\\CompilerIdC.tlog\\unsuccessfulbuild".
         Touching "Debug\\CompilerIdC.tlog\\CompilerIdC.lastbuildstate".
-      Done Building Project "C:\\Users\\ditas\\source\\repos\\objektuzd\\objekt1uzd\\build\\CMakeFiles\\4.2.3-msvc3\\CompilerIdC\\CompilerIdC.vcxproj" (default targets).
+      Done Building Project "C:\\Users\\ditas\\source\\repos\\ditassimoliunas-prog\\objektuzdv1\\build\\CMakeFiles\\4.2.3-msvc3\\CompilerIdC\\CompilerIdC.vcxproj" (default targets).
       
       Build succeeded.
           0 Warning(s)
           0 Error(s)
       
-      Time Elapsed 00:00:00.73
+      Time Elapsed 00:00:01.11
       
       
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
@@ -139,7 +140,7 @@ events:
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
       
       The C compiler identification is MSVC, found in:
-        C:/Users/ditas/source/repos/objektuzd/objekt1uzd/build/CMakeFiles/4.2.3-msvc3/CompilerIdC/CompilerIdC.exe
+        C:/Users/ditas/source/repos/ditassimoliunas-prog/objektuzdv1/build/CMakeFiles/4.2.3-msvc3/CompilerIdC/CompilerIdC.exe
       
   -
     kind: "find-v1"
@@ -201,6 +202,7 @@ events:
       - "C:/MinGW/bin/"
       - "C:/msys64/usr/bin/"
       - "C:/Users/ditas/.dotnet/tools/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/PrivateAssemblies/runtimes/win-x64/native/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/VC/Linux/bin/ConnectionManagerExe/"
@@ -247,6 +249,7 @@ events:
         - "C:\\MinGW\\bin"
         - "C:\\msys64\\usr\\bin"
         - "C:\\Users\\ditas\\.dotnet\\tools"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\PrivateAssemblies\\runtimes\\win-x64\\native"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
@@ -311,6 +314,7 @@ events:
       - "C:/MinGW/bin/"
       - "C:/msys64/usr/bin/"
       - "C:/Users/ditas/.dotnet/tools/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/PrivateAssemblies/runtimes/win-x64/native/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/VC/Linux/bin/ConnectionManagerExe/"
@@ -430,6 +434,9 @@ events:
       - "C:/Users/ditas/.dotnet/tools/lld-link.com"
       - "C:/Users/ditas/.dotnet/tools/lld-link.exe"
       - "C:/Users/ditas/.dotnet/tools/lld-link"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/PrivateAssemblies/runtimes/win-x64/native/lld-link.com"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/PrivateAssemblies/runtimes/win-x64/native/lld-link.exe"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/PrivateAssemblies/runtimes/win-x64/native/lld-link"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/lld-link.com"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/lld-link.exe"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/lld-link"
@@ -482,6 +489,7 @@ events:
         - "C:\\MinGW\\bin"
         - "C:\\msys64\\usr\\bin"
         - "C:\\Users\\ditas\\.dotnet\\tools"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\PrivateAssemblies\\runtimes\\win-x64\\native"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
@@ -544,6 +552,7 @@ events:
       - "C:/MinGW/bin/"
       - "C:/msys64/usr/bin/"
       - "C:/Users/ditas/.dotnet/tools/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/PrivateAssemblies/runtimes/win-x64/native/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/VC/Linux/bin/ConnectionManagerExe/"
@@ -590,6 +599,7 @@ events:
         - "C:\\MinGW\\bin"
         - "C:\\msys64\\usr\\bin"
         - "C:\\Users\\ditas\\.dotnet\\tools"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\PrivateAssemblies\\runtimes\\win-x64\\native"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
@@ -652,6 +662,7 @@ events:
       - "C:/MinGW/bin/"
       - "C:/msys64/usr/bin/"
       - "C:/Users/ditas/.dotnet/tools/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/PrivateAssemblies/runtimes/win-x64/native/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/VC/Linux/bin/ConnectionManagerExe/"
@@ -728,6 +739,7 @@ events:
         - "C:\\MinGW\\bin"
         - "C:\\msys64\\usr\\bin"
         - "C:\\Users\\ditas\\.dotnet\\tools"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\PrivateAssemblies\\runtimes\\win-x64\\native"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
@@ -790,6 +802,7 @@ events:
       - "C:/MinGW/bin/"
       - "C:/msys64/usr/bin/"
       - "C:/Users/ditas/.dotnet/tools/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/PrivateAssemblies/runtimes/win-x64/native/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/VC/Linux/bin/ConnectionManagerExe/"
@@ -836,6 +849,7 @@ events:
         - "C:\\MinGW\\bin"
         - "C:\\msys64\\usr\\bin"
         - "C:\\Users\\ditas\\.dotnet\\tools"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\PrivateAssemblies\\runtimes\\win-x64\\native"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
@@ -904,6 +918,7 @@ events:
         - "C:\\MinGW\\bin"
         - "C:\\msys64\\usr\\bin"
         - "C:\\Users\\ditas\\.dotnet\\tools"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\PrivateAssemblies\\runtimes\\win-x64\\native"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
@@ -934,9 +949,9 @@ events:
       The output was:
       0
       MSBuild version 18.5.4+cb4e32d21 for .NET Framework
-      Build started 4/25/2026 7:21:42 PM.
+      Build started 5/6/2026 2:54:31 PM.
       
-      Project "C:\\Users\\ditas\\source\\repos\\objektuzd\\objekt1uzd\\build\\CMakeFiles\\4.2.3-msvc3\\CompilerIdCXX\\CompilerIdCXX.vcxproj" on node 1 (default targets).
+      Project "C:\\Users\\ditas\\source\\repos\\ditassimoliunas-prog\\objektuzdv1\\build\\CMakeFiles\\4.2.3-msvc3\\CompilerIdCXX\\CompilerIdCXX.vcxproj" on node 1 (default targets).
       PrepareForBuild:
         Creating directory "Debug\\".
         Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
@@ -949,7 +964,7 @@ events:
         CMakeCXXCompilerId.cpp
       Link:
         C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdCXX.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdCXX.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdCXX.lib" /MACHINE:X64 Debug\\CMakeCXXCompilerId.obj
-        CompilerIdCXX.vcxproj -> C:\\Users\\ditas\\source\\repos\\objektuzd\\objekt1uzd\\build\\CMakeFiles\\4.2.3-msvc3\\CompilerIdCXX\\CompilerIdCXX.exe
+        CompilerIdCXX.vcxproj -> C:\\Users\\ditas\\source\\repos\\ditassimoliunas-prog\\objektuzdv1\\build\\CMakeFiles\\4.2.3-msvc3\\CompilerIdCXX\\CompilerIdCXX.exe
       PostBuildEvent:
         for %%i in (cl.exe) do @echo CMAKE_CXX_COMPILER=%%~$PATH:i
         :VCEnd
@@ -957,13 +972,13 @@ events:
       FinalizeBuildStatus:
         Deleting file "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild".
         Touching "Debug\\CompilerIdCXX.tlog\\CompilerIdCXX.lastbuildstate".
-      Done Building Project "C:\\Users\\ditas\\source\\repos\\objektuzd\\objekt1uzd\\build\\CMakeFiles\\4.2.3-msvc3\\CompilerIdCXX\\CompilerIdCXX.vcxproj" (default targets).
+      Done Building Project "C:\\Users\\ditas\\source\\repos\\ditassimoliunas-prog\\objektuzdv1\\build\\CMakeFiles\\4.2.3-msvc3\\CompilerIdCXX\\CompilerIdCXX.vcxproj" (default targets).
       
       Build succeeded.
           0 Warning(s)
           0 Error(s)
       
-      Time Elapsed 00:00:00.61
+      Time Elapsed 00:00:01.01
       
       
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
@@ -971,7 +986,7 @@ events:
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.vcxproj"
       
       The CXX compiler identification is MSVC, found in:
-        C:/Users/ditas/source/repos/objektuzd/objekt1uzd/build/CMakeFiles/4.2.3-msvc3/CompilerIdCXX/CompilerIdCXX.exe
+        C:/Users/ditas/source/repos/ditassimoliunas-prog/objektuzdv1/build/CMakeFiles/4.2.3-msvc3/CompilerIdCXX/CompilerIdCXX.exe
       
   -
     kind: "find-v1"
@@ -1033,6 +1048,7 @@ events:
       - "C:/MinGW/bin/"
       - "C:/msys64/usr/bin/"
       - "C:/Users/ditas/.dotnet/tools/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/PrivateAssemblies/runtimes/win-x64/native/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/VC/Linux/bin/ConnectionManagerExe/"
@@ -1152,6 +1168,9 @@ events:
       - "C:/Users/ditas/.dotnet/tools/lld-link.com"
       - "C:/Users/ditas/.dotnet/tools/lld-link.exe"
       - "C:/Users/ditas/.dotnet/tools/lld-link"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/PrivateAssemblies/runtimes/win-x64/native/lld-link.com"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/PrivateAssemblies/runtimes/win-x64/native/lld-link.exe"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/PrivateAssemblies/runtimes/win-x64/native/lld-link"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/lld-link.com"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/lld-link.exe"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/lld-link"
@@ -1204,6 +1223,7 @@ events:
         - "C:\\MinGW\\bin"
         - "C:\\msys64\\usr\\bin"
         - "C:\\Users\\ditas\\.dotnet\\tools"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\PrivateAssemblies\\runtimes\\win-x64\\native"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
@@ -1268,6 +1288,7 @@ events:
       - "C:/MinGW/bin/"
       - "C:/msys64/usr/bin/"
       - "C:/Users/ditas/.dotnet/tools/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/PrivateAssemblies/runtimes/win-x64/native/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/VC/Linux/bin/ConnectionManagerExe/"
@@ -1353,6 +1374,7 @@ events:
         - "C:\\MinGW\\bin"
         - "C:\\msys64\\usr\\bin"
         - "C:\\Users\\ditas\\.dotnet\\tools"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\PrivateAssemblies\\runtimes\\win-x64\\native"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
@@ -1372,8 +1394,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "C:/Users/ditas/source/repos/objektuzd/objekt1uzd/build/CMakeFiles/CMakeScratch/TryCompile-gg2nfn"
-      binary: "C:/Users/ditas/source/repos/objektuzd/objekt1uzd/build/CMakeFiles/CMakeScratch/TryCompile-gg2nfn"
+      source: "C:/Users/ditas/source/repos/ditassimoliunas-prog/objektuzdv1/build/CMakeFiles/CMakeScratch/TryCompile-w56rrh"
+      binary: "C:/Users/ditas/source/repos/ditassimoliunas-prog/objektuzdv1/build/CMakeFiles/CMakeScratch/TryCompile-w56rrh"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
       CMAKE_C_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
@@ -1382,39 +1404,39 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/ditas/source/repos/objektuzd/objekt1uzd/build/CMakeFiles/CMakeScratch/TryCompile-gg2nfn'
+        Change Dir: 'C:/Users/ditas/source/repos/ditassimoliunas-prog/objektuzdv1/build/CMakeFiles/CMakeScratch/TryCompile-w56rrh'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_4538d.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_ddc0b.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
         MSBuild version 18.5.4+cb4e32d21 for .NET Framework
-        Build started 4/25/2026 7:21:44 PM.
+        Build started 5/6/2026 2:54:33 PM.
         
-        Project "C:\\Users\\ditas\\source\\repos\\objektuzd\\objekt1uzd\\build\\CMakeFiles\\CMakeScratch\\TryCompile-gg2nfn\\cmTC_4538d.vcxproj" on node 1 (default targets).
+        Project "C:\\Users\\ditas\\source\\repos\\ditassimoliunas-prog\\objektuzdv1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-w56rrh\\cmTC_ddc0b.vcxproj" on node 1 (default targets).
         PrepareForBuild:
           Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "C:\\Users\\ditas\\source\\repos\\objektuzd\\objekt1uzd\\build\\CMakeFiles\\CMakeScratch\\TryCompile-gg2nfn\\Debug\\".
-          Creating directory "cmTC_4538d.dir\\Debug\\cmTC_4538d.tlog\\".
+          Creating directory "C:\\Users\\ditas\\source\\repos\\ditassimoliunas-prog\\objektuzdv1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-w56rrh\\Debug\\".
+          Creating directory "cmTC_ddc0b.dir\\Debug\\cmTC_ddc0b.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_4538d.dir\\Debug\\cmTC_4538d.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_4538d.dir\\Debug\\cmTC_4538d.tlog\\unsuccessfulbuild".
+          Creating "cmTC_ddc0b.dir\\Debug\\cmTC_ddc0b.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_ddc0b.dir\\Debug\\cmTC_ddc0b.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_4538d.dir\\Debug\\\\" /Fd"cmTC_4538d.dir\\Debug\\vc145.pdb" /external:W3 /TC /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-4.2\\Modules\\CMakeCCompilerABI.c"
+          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_ddc0b.dir\\Debug\\\\" /Fd"cmTC_ddc0b.dir\\Debug\\vc145.pdb" /external:W3 /TC /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-4.2\\Modules\\CMakeCCompilerABI.c"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.50.35729 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_4538d.dir\\Debug\\\\" /Fd"cmTC_4538d.dir\\Debug\\vc145.pdb" /external:W3 /TC /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-4.2\\Modules\\CMakeCCompilerABI.c"
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_ddc0b.dir\\Debug\\\\" /Fd"cmTC_ddc0b.dir\\Debug\\vc145.pdb" /external:W3 /TC /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-4.2\\Modules\\CMakeCCompilerABI.c"
           CMakeCCompilerABI.c
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\ditas\\source\\repos\\objektuzd\\objekt1uzd\\build\\CMakeFiles\\CMakeScratch\\TryCompile-gg2nfn\\Debug\\cmTC_4538d.exe" /INCREMENTAL /ILK:"cmTC_4538d.dir\\Debug\\cmTC_4538d.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/ditas/source/repos/objektuzd/objekt1uzd/build/CMakeFiles/CMakeScratch/TryCompile-gg2nfn/Debug/cmTC_4538d.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/ditas/source/repos/objektuzd/objekt1uzd/build/CMakeFiles/CMakeScratch/TryCompile-gg2nfn/Debug/cmTC_4538d.lib" /MACHINE:X64  /machine:x64 cmTC_4538d.dir\\Debug\\CMakeCCompilerABI.obj
-          cmTC_4538d.vcxproj -> C:\\Users\\ditas\\source\\repos\\objektuzd\\objekt1uzd\\build\\CMakeFiles\\CMakeScratch\\TryCompile-gg2nfn\\Debug\\cmTC_4538d.exe
+          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\ditas\\source\\repos\\ditassimoliunas-prog\\objektuzdv1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-w56rrh\\Debug\\cmTC_ddc0b.exe" /INCREMENTAL /ILK:"cmTC_ddc0b.dir\\Debug\\cmTC_ddc0b.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/ditas/source/repos/ditassimoliunas-prog/objektuzdv1/build/CMakeFiles/CMakeScratch/TryCompile-w56rrh/Debug/cmTC_ddc0b.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/ditas/source/repos/ditassimoliunas-prog/objektuzdv1/build/CMakeFiles/CMakeScratch/TryCompile-w56rrh/Debug/cmTC_ddc0b.lib" /MACHINE:X64  /machine:x64 cmTC_ddc0b.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_ddc0b.vcxproj -> C:\\Users\\ditas\\source\\repos\\ditassimoliunas-prog\\objektuzdv1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-w56rrh\\Debug\\cmTC_ddc0b.exe
         FinalizeBuildStatus:
-          Deleting file "cmTC_4538d.dir\\Debug\\cmTC_4538d.tlog\\unsuccessfulbuild".
-          Touching "cmTC_4538d.dir\\Debug\\cmTC_4538d.tlog\\cmTC_4538d.lastbuildstate".
-        Done Building Project "C:\\Users\\ditas\\source\\repos\\objektuzd\\objekt1uzd\\build\\CMakeFiles\\CMakeScratch\\TryCompile-gg2nfn\\cmTC_4538d.vcxproj" (default targets).
+          Deleting file "cmTC_ddc0b.dir\\Debug\\cmTC_ddc0b.tlog\\unsuccessfulbuild".
+          Touching "cmTC_ddc0b.dir\\Debug\\cmTC_ddc0b.tlog\\cmTC_ddc0b.lastbuildstate".
+        Done Building Project "C:\\Users\\ditas\\source\\repos\\ditassimoliunas-prog\\objektuzdv1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-w56rrh\\cmTC_ddc0b.vcxproj" (default targets).
         
         Build succeeded.
             0 Warning(s)
             0 Error(s)
         
-        Time Elapsed 00:00:00.58
+        Time Elapsed 00:00:01.16
         
       exitCode: 0
   -
@@ -1454,8 +1476,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/Users/ditas/source/repos/objektuzd/objekt1uzd/build/CMakeFiles/CMakeScratch/TryCompile-vphml4"
-      binary: "C:/Users/ditas/source/repos/objektuzd/objekt1uzd/build/CMakeFiles/CMakeScratch/TryCompile-vphml4"
+      source: "C:/Users/ditas/source/repos/ditassimoliunas-prog/objektuzdv1/build/CMakeFiles/CMakeScratch/TryCompile-ew3spc"
+      binary: "C:/Users/ditas/source/repos/ditassimoliunas-prog/objektuzdv1/build/CMakeFiles/CMakeScratch/TryCompile-ew3spc"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
@@ -1465,39 +1487,39 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/ditas/source/repos/objektuzd/objekt1uzd/build/CMakeFiles/CMakeScratch/TryCompile-vphml4'
+        Change Dir: 'C:/Users/ditas/source/repos/ditassimoliunas-prog/objektuzdv1/build/CMakeFiles/CMakeScratch/TryCompile-ew3spc'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_e0b7d.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_f8e5a.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
         MSBuild version 18.5.4+cb4e32d21 for .NET Framework
-        Build started 4/25/2026 7:21:45 PM.
+        Build started 5/6/2026 2:54:35 PM.
         
-        Project "C:\\Users\\ditas\\source\\repos\\objektuzd\\objekt1uzd\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vphml4\\cmTC_e0b7d.vcxproj" on node 1 (default targets).
+        Project "C:\\Users\\ditas\\source\\repos\\ditassimoliunas-prog\\objektuzdv1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ew3spc\\cmTC_f8e5a.vcxproj" on node 1 (default targets).
         PrepareForBuild:
           Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "C:\\Users\\ditas\\source\\repos\\objektuzd\\objekt1uzd\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vphml4\\Debug\\".
-          Creating directory "cmTC_e0b7d.dir\\Debug\\cmTC_e0b7d.tlog\\".
+          Creating directory "C:\\Users\\ditas\\source\\repos\\ditassimoliunas-prog\\objektuzdv1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ew3spc\\Debug\\".
+          Creating directory "cmTC_f8e5a.dir\\Debug\\cmTC_f8e5a.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_e0b7d.dir\\Debug\\cmTC_e0b7d.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_e0b7d.dir\\Debug\\cmTC_e0b7d.tlog\\unsuccessfulbuild".
+          Creating "cmTC_f8e5a.dir\\Debug\\cmTC_f8e5a.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_f8e5a.dir\\Debug\\cmTC_f8e5a.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /Fo"cmTC_e0b7d.dir\\Debug\\\\" /Fd"cmTC_e0b7d.dir\\Debug\\vc145.pdb" /external:W3 /TP /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"
+          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /Fo"cmTC_f8e5a.dir\\Debug\\\\" /Fd"cmTC_f8e5a.dir\\Debug\\vc145.pdb" /external:W3 /TP /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.50.35729 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /Fo"cmTC_e0b7d.dir\\Debug\\\\" /Fd"cmTC_e0b7d.dir\\Debug\\vc145.pdb" /external:W3 /TP /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /Fo"cmTC_f8e5a.dir\\Debug\\\\" /Fd"cmTC_f8e5a.dir\\Debug\\vc145.pdb" /external:W3 /TP /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"
           CMakeCXXCompilerABI.cpp
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\ditas\\source\\repos\\objektuzd\\objekt1uzd\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vphml4\\Debug\\cmTC_e0b7d.exe" /INCREMENTAL /ILK:"cmTC_e0b7d.dir\\Debug\\cmTC_e0b7d.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/ditas/source/repos/objektuzd/objekt1uzd/build/CMakeFiles/CMakeScratch/TryCompile-vphml4/Debug/cmTC_e0b7d.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/ditas/source/repos/objektuzd/objekt1uzd/build/CMakeFiles/CMakeScratch/TryCompile-vphml4/Debug/cmTC_e0b7d.lib" /MACHINE:X64  /machine:x64 cmTC_e0b7d.dir\\Debug\\CMakeCXXCompilerABI.obj
-          cmTC_e0b7d.vcxproj -> C:\\Users\\ditas\\source\\repos\\objektuzd\\objekt1uzd\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vphml4\\Debug\\cmTC_e0b7d.exe
+          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\ditas\\source\\repos\\ditassimoliunas-prog\\objektuzdv1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ew3spc\\Debug\\cmTC_f8e5a.exe" /INCREMENTAL /ILK:"cmTC_f8e5a.dir\\Debug\\cmTC_f8e5a.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/ditas/source/repos/ditassimoliunas-prog/objektuzdv1/build/CMakeFiles/CMakeScratch/TryCompile-ew3spc/Debug/cmTC_f8e5a.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/ditas/source/repos/ditassimoliunas-prog/objektuzdv1/build/CMakeFiles/CMakeScratch/TryCompile-ew3spc/Debug/cmTC_f8e5a.lib" /MACHINE:X64  /machine:x64 cmTC_f8e5a.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_f8e5a.vcxproj -> C:\\Users\\ditas\\source\\repos\\ditassimoliunas-prog\\objektuzdv1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ew3spc\\Debug\\cmTC_f8e5a.exe
         FinalizeBuildStatus:
-          Deleting file "cmTC_e0b7d.dir\\Debug\\cmTC_e0b7d.tlog\\unsuccessfulbuild".
-          Touching "cmTC_e0b7d.dir\\Debug\\cmTC_e0b7d.tlog\\cmTC_e0b7d.lastbuildstate".
-        Done Building Project "C:\\Users\\ditas\\source\\repos\\objektuzd\\objekt1uzd\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vphml4\\cmTC_e0b7d.vcxproj" (default targets).
+          Deleting file "cmTC_f8e5a.dir\\Debug\\cmTC_f8e5a.tlog\\unsuccessfulbuild".
+          Touching "cmTC_f8e5a.dir\\Debug\\cmTC_f8e5a.tlog\\cmTC_f8e5a.lastbuildstate".
+        Done Building Project "C:\\Users\\ditas\\source\\repos\\ditassimoliunas-prog\\objektuzdv1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ew3spc\\cmTC_f8e5a.vcxproj" (default targets).
         
         Build succeeded.
             0 Warning(s)
             0 Error(s)
         
-        Time Elapsed 00:00:00.56
+        Time Elapsed 00:00:01.22
         
       exitCode: 0
   -
