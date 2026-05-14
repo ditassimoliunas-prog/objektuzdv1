@@ -56,3 +56,12 @@ v1.2 versijoje implementuoti **Rule of Five** principai (destruktorius, copy/mov
 | 8-10 | I/O operatoriai ir round-trip testas |
 | 11-13 | Getters/setters, vector operacijos |
 
+<img width="437" height="734" alt="image" src="https://github.com/user-attachments/assets/e71d41ea-3766-4f6b-a89f-10bd49b48f55" />
+
+<img width="917" height="729" alt="image" src="https://github.com/user-attachments/assets/0d84eae5-1925-43e6-9843-b34291d9ad27" />
+
+<img width="550" height="394" alt="image" src="https://github.com/user-attachments/assets/d950c503-e1ff-4e3d-8e4a-8bf03867e352" />
+
+
+
+
