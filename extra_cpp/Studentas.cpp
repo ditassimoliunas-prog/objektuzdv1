@@ -91,6 +91,30 @@ std::istream& Studentas::readStudent(std::istream& is) {
     return is;
 }
 
+// ===== I/O OPERATORIAI =====
+
+// Išvesties operatorius - išspausdina student? ? sraut?
+std::ostream& operator<<(std::ostream& os, const Studentas& s) {
+    os << "Vardas: " << s.vardas_ << " | Pavarde: " << s.pavarde_ << " | ";
+    os << "Egzaminas: " << s.egz_ << " | Vidurkis rezultatas: " << s.rez_ << " | ";
+    os << "Mediana rezultatas: " << s.med_ << " | Pazymiai: ";
+
+    if (!s.paz_.empty()) {
+        for (int paz : s.paz_) {
+            os << paz << " ";
+        }
+    } else {
+        os << "(n?ra)";
+    }
+
+    return os;
+}
+
+// ?vesties operatorius - nuskaito student? iš srauto
+std::istream& operator>>(std::istream& is, Studentas& s) {
+    return s.readStudent(is);
+}
+
 // ===== LYGINIMO FUNKCIJOS =====
 
 bool comparePagalVarda(const Studentas& a, const Studentas& b) {
