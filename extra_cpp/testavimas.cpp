@@ -1,4 +1,4 @@
-#include <iostream>
+Ôªø#include <iostream>
 #include <fstream>
 #include <vector>
 #include <string>
@@ -14,6 +14,7 @@
 
 #include "../header_files/testavimas.h"
 #include "../header_files/mat_funkcijos.h"
+#include "../header_files/StudentasStruct.h"
 
 using std::cout;
 using std::cin;
@@ -41,7 +42,7 @@ void sukurtiTestavimoFailus() {
     cout << "1. 1000 irasu\n";
     cout << "2. 10000 irasu\n";
     cout << "3. 100000 irasu\n";
-    cout << "4. 1 000000 irasu\n";
+    cout << "4. 1000000 irasu\n";
     cout << "5. 10000000 irasu\n";
     cout << "6. Visus auksciau isvardintus\n";
     cout << "Jusu pasirinkimas: ";
@@ -64,7 +65,7 @@ void sukurtiTestavimoFailus() {
     cout << string(80, '-') << "-\n";
 
     for (int n : pasirinkti_SZ) {
-        string fname = "Studentai_test\\studentai_" + to_string(n) + ".txt";
+        string fname = "studentai_" + to_string(n) + ".txt";
 
         // Pradedamas matuoti laikas tiems irasams kurti 
         auto start = high_resolution_clock::now();
@@ -102,7 +103,9 @@ void nuskaitytiDuomenis(const string& fname, Container& grupe) {
     string header;
     std::getline(in, header);
 
-    Studentas st;
+    // Naudosime decltype(grupe) elementƒÖ, kad ≈æinotume tipƒÖ (Studentas ar StudentasStruct)
+    using ElementType = typename Container::value_type;
+    ElementType st;
     st.reservePaz(paz_kiekis);
 
     while (true) { 
@@ -131,7 +134,8 @@ double tirtiKonteineri(int n, const string& fname, int strat) {
     auto start = high_resolution_clock::now();
 
     Container grupe;
-    if constexpr (std::is_same_v<Container, vector<Studentas>>) {
+    using ElementType = typename Container::value_type;
+    if constexpr (std::is_same_v<Container, vector<ElementType>>) {
         try {
             grupe.reserve(n); // list neturi reserve() funkcijos
         } catch (const std::exception& e) {
@@ -148,12 +152,12 @@ double tirtiKonteineri(int n, const string& fname, int strat) {
 
     // 2. Rusiavimas
     start = high_resolution_clock::now();
-    if constexpr (std::is_same_v<Container, list<Studentas>>) {
-        grupe.sort([](const Studentas& a, const Studentas& b) {
+    if constexpr (std::is_same_v<Container, list<ElementType>>) {
+        grupe.sort([](const ElementType& a, const ElementType& b) {
             return a.getRez() < b.getRez();
         });
     } else {
-        std::sort(grupe.begin(), grupe.end(), [](const Studentas& a, const Studentas& b) {
+        std::sort(grupe.begin(), grupe.end(), [](const ElementType& a, const ElementType& b) {
             return a.getRez() < b.getRez();
         });
     }
@@ -167,7 +171,7 @@ double tirtiKonteineri(int n, const string& fname, int strat) {
     Container kietiakai;
 
     if (strat == 1) {
-        if constexpr (std::is_same_v<Container, vector<Studentas>>) {
+        if constexpr (std::is_same_v<Container, vector<ElementType>>) {
             vargsiukai.reserve(n / 2 + 100);
             kietiakai.reserve(n / 2 + 100);
         }
@@ -183,21 +187,21 @@ double tirtiKonteineri(int n, const string& fname, int strat) {
         Container().swap(grupe); // Isvalome pradini konteineri
     }
     else if (strat == 2) {
-        if constexpr (std::is_same_v<Container, vector<Studentas>>) {
+        if constexpr (std::is_same_v<Container, vector<ElementType>>) {
             // Sukrupuojame vektoriu vietoje (O(N) laikas): 
-            auto splitPoint = std::partition(grupe.begin(), grupe.end(), [](const Studentas& s) {
+            auto splitPoint = std::partition(grupe.begin(), grupe.end(), [](const ElementType& s) {
                 return s.getRez() >= 5.0; // Salyga kietiakams
             });
 
-            // Iö anksto rezervuojame atminties vargöiukams (nebutina, bet dar labiau pagreitina)
+            // I≈° anksto rezervuojame atminties varg≈°iukams (nebutina, bet dar labiau pagreitina)
             vargsiukai.reserve(std::distance(splitPoint, grupe.end()));
 
-            // NAUDOJAME MOVE: Perkeliame vargöiukus iö pagrindinio vektoriaus galo i naujaji.
+            // NAUDOJAME MOVE: Perkeliame varg≈°iukus i≈° pagrindinio vektoriaus galo i naujaji.
             vargsiukai.insert(vargsiukai.end(), 
                               std::make_move_iterator(splitPoint), 
                               std::make_move_iterator(grupe.end()));
 
-            // Iötriname perkeltus elementus iö originalaus vektoriaus.
+            // I≈°triname perkeltus elementus i≈° originalaus vektoriaus.
             grupe.erase(splitPoint, grupe.end());
             kietiakai = move(grupe); // Like grupeje yra kietiakai
         }
@@ -216,25 +220,25 @@ double tirtiKonteineri(int n, const string& fname, int strat) {
         }
     }
     else if (strat == 3) {
-        if constexpr (std::is_same_v<Container, list<Studentas>>) {
-            // list atveju efektyviausia yra iökirpti elementus per splice + remove_if ar pagal salyga
-            auto it = std::partition(grupe.begin(), grupe.end(), [](const Studentas& s) {
-                return s.getRez() < 5.0; // Vargöiukaikeliauja i pati prieki
+        if constexpr (std::is_same_v<Container, list<ElementType>>) {
+            // list atveju efektyviausia yra ikirpti elementus per splice + remove_if ar pagal salyga
+            auto it = std::partition(grupe.begin(), grupe.end(), [](const ElementType& s) {
+                return s.getRez() < 5.0; // Vargiukaikeliauja i pati prieki
             });
-            // Iökerpame vargöiukus iö grupes tiesiai i vargöiuku list be memory re-allocation
+            // I≈°kerpame varg≈°iukus i≈° grupes tiesiai i varg≈°iuku list be memory re-allocation
             vargsiukai.splice(vargsiukai.begin(), grupe, grupe.begin(), it);
             kietiakai = move(grupe);
         }
         else {
             // std::vector ir std::deque atveju efektyviausa naudoti std::partition in-place
-            if constexpr (std::is_same_v<Container, vector<Studentas>>) {
+            if constexpr (std::is_same_v<Container, vector<ElementType>>) {
                 vargsiukai.reserve(n / 2 + 100);
             }
-            auto it = std::stable_partition(grupe.begin(), grupe.end(), [](const Studentas& s) {
+            auto it = std::stable_partition(grupe.begin(), grupe.end(), [](const ElementType& s) {
                 return s.getRez() < 5.0;
             });
 
-            // Iteruojam per pradûia kur atsidure vargöiukai po stable_partition pakeitimu
+            // Iteruojam per pradia kur atsidure vargiukai po stable_partition pakeitimu
             vargsiukai.insert(vargsiukai.end(), std::make_move_iterator(grupe.begin()), std::make_move_iterator(it));
             // Kas liko originalioj grupej iteruojame i kietiakius (nuo it iki end)
             kietiakai.insert(kietiakai.end(), std::make_move_iterator(it), std::make_move_iterator(grupe.end()));
@@ -249,7 +253,7 @@ double tirtiKonteineri(int n, const string& fname, int strat) {
 
     // 4.1 Irasome vargsiukus i faila
     start = high_resolution_clock::now();
-    ofstream outV("vargsiukai\\vargsiukai_" + to_string(n) + ".txt");
+    ofstream outV("vargsiukai_" + to_string(n) + ".txt");
     outV << left << setw(20) << "Vardas" << setw(20) << "Pavarde" << "Galutinis (Vid.)\n";
     for (const auto& s : vargsiukai) {
         outV << left << setw(20) << s.getVardas() << setw(20) << s.getPavarde() << fixed << setprecision(2) << s.getRez() << "\n";
@@ -262,7 +266,7 @@ double tirtiKonteineri(int n, const string& fname, int strat) {
 
     // 4.2 Irasome kietiakius i faila
     start = high_resolution_clock::now();
-    ofstream outK("kietiakai\\kietiakai_" + to_string(n) + ".txt");
+    ofstream outK("kietiakai_" + to_string(n) + ".txt");
     outK << left << setw(20) << "Vardas" << setw(20) << "Pavarde" << "Galutinis (Vid.)\n";
     for (const auto& s : kietiakai) {
         outK << left << setw(20) << s.getVardas() << setw(20) << s.getPavarde() << fixed << setprecision(2) << s.getRez() << "\n";
@@ -323,7 +327,7 @@ void atliktiSpartosAnalize() {
     cout << "\nPradedama spartos analize pagal nurodytus zingsnius...\n";
 
     for (int n : pasirinkti_SZ) {
-        string fname = "Studentai_test\\studentai_" + to_string(n) + ".txt";
+        string fname = "studentai_" + to_string(n) + ".txt";
 
         // Tikrinimas ar failas atsidaro nenaudojant filesystem
         ifstream patikrinimas(fname);
@@ -338,9 +342,11 @@ void atliktiSpartosAnalize() {
         cout << string(80, '-') << "\n";
 
         double visas_laikas = 0.0;
+        double visas_laikas_struct = 0.0;
 
         for (int i = 0; i < test_kartai; i++) {
             cout << "\nTESTO NUMERIS: " << i + 1 << "\n";
+            cout << "--- CLASS TESTAVIMAS ---\n";
             if (kont == 1) visas_laikas += tirtiKonteineri<vector<Studentas>>(n, fname, strat);
             else if (kont == 2) visas_laikas += tirtiKonteineri<list<Studentas>>(n, fname, strat);
             else if (kont == 3) visas_laikas += tirtiKonteineri<deque<Studentas>>(n, fname, strat);
@@ -348,10 +354,17 @@ void atliktiSpartosAnalize() {
                 cout << "Neteisingas konteinerio tipas!\n";
                 return;
             }
+
+            cout << "\n--- STRUCT TESTAVIMAS ---\n";
+            if (kont == 1) visas_laikas_struct += tirtiKonteineri<vector<StudentasStruct>>(n, fname, strat);
+            else if (kont == 2) visas_laikas_struct += tirtiKonteineri<list<StudentasStruct>>(n, fname, strat);
+            else if (kont == 3) visas_laikas_struct += tirtiKonteineri<deque<StudentasStruct>>(n, fname, strat);
         }
         cout << "\n========================================\n";
-        cout << "Vidutinis viso testo (nuskaitymas+dalijimas+isvedimas) laikas po " << test_kartai << " bandymu:\n";
+        cout << "Vidutinis viso CLASS testo (nuskaitymas+dalijimas+isvedimas) laikas po " << test_kartai << " bandymu:\n";
         cout << fixed << setprecision(5) << visas_laikas / test_kartai << " s.\n";
+        cout << "Vidutinis viso STRUCT testo (nuskaitymas+dalijimas+isvedimas) laikas po " << test_kartai << " bandymu:\n";
+        cout << fixed << setprecision(5) << visas_laikas_struct / test_kartai << " s.\n";
         cout << "========================================\n\n";
     }
 }
@@ -360,22 +373,22 @@ void PadalintiStudentusZabioGreiciu(std::vector<Studentas>& studentai, std::vect
     
     // 1. Sukrupuojame vektoriu vietoje (O(N) laikas): 
     // Visi, kuriu balas >= 5.0 atsiduria priekyje, o < 5.0 - gale.
-    // Jei jums BUTINA iölaikyti jau esama eiliökuma (pvz., abecelini), 
+    // Jei jums BUTINA i≈°laikyti jau esama eili≈°kuma (pvz., abecelini), 
     // vietoj 'std::partition' naudokite 'std::stable_partition'.
     auto splitPoint = std::partition(studentai.begin(), studentai.end(), [](const Studentas& s) {
         return s.getRez() >= 5.0; // Pakeista is galutinis i rez
     });
 
-    // 2. Iö anksto rezervuojame atminties vargöiukams (nebutina, bet dar labiau pagreitina)
+    // 2. I≈° anksto rezervuojame atminties varg≈°iukams (nebutina, bet dar labiau pagreitina)
     vargsiukai.reserve(std::distance(splitPoint, studentai.end()));
 
-    // 3. NAUDOJAME MOVE: Perkeliame vargöiukus iö pagrindinio vektoriaus galo i naujaji.
-    // std::make_move_iterator uûtikrina, kad tekstai ir kiti duomenys nebutu kopijuojami iö naujo.
+    // 3. NAUDOJAME MOVE: Perkeliame varg≈°iukus i≈° pagrindinio vektoriaus galo i naujaji.
+    // std::make_move_iterator u≈ætikrina, kad tekstai ir kiti duomenys nebutu kopijuojami i≈° naujo.
     vargsiukai.insert(vargsiukai.end(), 
                       std::make_move_iterator(splitPoint), 
                       std::make_move_iterator(studentai.end()));
 
-    // 4. Iötriname perkeltus elementus iö originalaus vektoriaus.
-    // Kadangi triname Iä GALO, jokio duomenu stumdymo nebelieka - operacija ivyksta per O(1).
+    // 4. I≈°triname perkeltus elementus i≈° originalaus vektoriaus.
+    // Kadangi triname I≈† GALO, jokio duomenu stumdymo nebelieka - operacija ivyksta per O(1).
     studentai.erase(splitPoint, studentai.end());
 }
