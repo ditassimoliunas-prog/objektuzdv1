@@ -37,22 +37,22 @@ void test_default_constructor() {
     Studentas s;
 
     assert(s.getVardas() == "A");
-    testPassed("Vardas inicijuotas į 'A'");
+    testPassed("Vardas inicijuotas i 'A'");
 
     assert(s.getPavarde() == "BB");
-    testPassed("Pavardė inicijuota į 'BB'");
+    testPassed("Pavarde inicijuota i 'BB'");
 
     assert(s.getEgz() == 0);
-    testPassed("Egzaminas inicijuotas į 0");
+    testPassed("Egzaminas inicijuotas i 0");
 
     assert(s.getRez() == 0.0);
-    testPassed("Rezultatas inicijuotas į 0.0");
+    testPassed("Rezultatas inicijuotas i 0.0");
 
     assert(s.getMed() == 0.0);
-    testPassed("Mediana inicijuota į 0.0");
+    testPassed("Mediana inicijuota i 0.0");
 
     assert(s.isPazEmpty());
-    testPassed("Pažymiai sąrašas tuščias");
+    testPassed("Pazymiai sarasas tucias");
 }
 
 // TEST #2: Parametrizuotas konstruktorius
@@ -65,7 +65,7 @@ void test_parametrized_constructor() {
     testPassed("Vardas teisingai priskirtas");
 
     assert(s.getPavarde() == "Jonaitis");
-    testPassed("Pavardė teisingai priskirta");
+    testPassed("Pavarde teisingai priskirta");
 
     assert(s.getEgz() == 95);
     testPassed("Egzaminas teisingai priskirtas");
@@ -80,36 +80,36 @@ void test_copy_constructor() {
     s1.addPaz(9);
     s1.addPaz(10);
 
-    // Kuriam kopiją
+    // Kuriam kopija
     Studentas s2 = s1;
 
     assert(s2.getVardas() == s1.getVardas());
     testPassed("Kopijoje vardas sutampa");
 
     assert(s2.getPavarde() == s1.getPavarde());
-    testPassed("Kopijoje pavardė sutampa");
+    testPassed("Kopijoje pavarde sutampa");
 
     assert(s2.getEgz() == s1.getEgz());
     testPassed("Kopijoje egzaminas sutampa");
 
     assert(s2.getPaz().size() == s1.getPaz().size());
-    testPassed("Kopijoje pažymiai kiekis sutampa");
+    testPassed("Kopijoje pazymiai kiekis sutampa");
 
     assert(s2.getPaz()[0] == s1.getPaz()[0]);
-    testPassed("Kopijoje pažymiai vertės sutampa");
+    testPassed("Kopijoje pazymiai vertes sutampa");
 
     // Tikriname, kad tai skirtingi objektai (deep copy)
     Studentas s3 = s1;
     s3.addPaz(100);
     assert(s1.getPaz().size() != s3.getPaz().size());
-    testPassed("Deep copy veikia - modifikacija nepaveikia originalą");
+    testPassed("Deep copy veikia - modifikacija nepaveikia originala");
 }
 
 // TEST #4: Copy assignment operator
 void test_copy_assignment() {
     printTestHeader("Copy Assignment Operator");
 
-    Studentas s1("Marta", "Martinė", 92);
+    Studentas s1("Marta", "Martine", 92);
     s1.addPaz(7);
     s1.addPaz(8);
     s1.addPaz(9);
@@ -118,13 +118,13 @@ void test_copy_assignment() {
     s2 = s1;
 
     assert(s2.getVardas() == "Marta");
-    testPassed("Priskyrimo metu vardas iš naujo priskirtas");
+    testPassed("Priskyrimo metu vardas is naujo priskirtas");
 
-    assert(s2.getPavarde() == "Martinė");
-    testPassed("Priskyrimo metu pavardė iš naujo priskirta");
+    assert(s2.getPavarde() == "Martine");
+    testPassed("Priskyrimo metu pavarde is naujo priskirta");
 
     assert(s2.getPaz().size() == 3);
-    testPassed("Priskyrimo metu pažymiai iš naujo priskirti");
+    testPassed("Priskyrimo metu pazymiai is naujo priskirti");
 
     // Self-assignment check
     s2 = s2;
@@ -145,21 +145,21 @@ void test_move_constructor() {
     Studentas s2 = std::move(s1);
 
     assert(s2.getVardas() == "Laima");
-    testPassed("Move konstruktorius - vardas iš naujo priskirtas");
+    testPassed("Move konstruktorius - vardas is naujo priskirtas");
 
     assert(s2.getPaz().size() == 3);
-    testPassed("Move konstruktorius - pažymiai iš naujo priskirti");
+    testPassed("Move konstruktorius - pazymiai is naujo priskirti");
 
-    // s1 turėtų turėti tuščius pažymius
+    // s1 turetu tureti tuscius pazymius
     assert(s1.isPazEmpty());
-    testPassed("Move konstruktorius - šaltinis ištuštintas");
+    testPassed("Move konstruktorius - saltinis istustintas");
 }
 
 // TEST #6: Move assignment operator
 void test_move_assignment() {
     printTestHeader("Move Assignment Operator");
 
-    Studentas s1("Rūta", "Rutė", 90);
+    Studentas s1("Ruta", "Rute", 90);
     s1.addPaz(5);
     s1.addPaz(6);
     s1.addPaz(7);
@@ -167,18 +167,18 @@ void test_move_assignment() {
     Studentas s2;
     s2 = std::move(s1);
 
-    assert(s2.getVardas() == "Rūta");
-    testPassed("Move assignment - vardas iš naujo priskirtas");
+    assert(s2.getVardas() == "Ruta");
+    testPassed("Move assignment - vardas is naujo priskirtas");
 
     assert(s2.getPaz().size() == 3);
-    testPassed("Move assignment - pažymiai iš naujo priskirti");
+    testPassed("Move assignment - pazymiai is naujo priskirti");
 
     assert(s1.isPazEmpty());
-    testPassed("Move assignment - šaltinis ištuštintas");
+    testPassed("Move assignment - saltinis istustintas");
 
     // Self-move assignment check
     s2 = std::move(s2);
-    assert(s2.getVardas() == "Rūta");
+    assert(s2.getVardas() == "Ruta");
     testPassed("Move assignment self-assignment saugiai veikia");
 }
 
@@ -187,23 +187,23 @@ void test_destructor() {
     printTestHeader("Destruktorius - RAII Principas");
 
     {
-        Studentas s("Vidmantas", "Vidmantė", 87);
+        Studentas s("Vidmantas", "Vidmante", 87);
         s.addPaz(9);
         s.addPaz(10);
         s.addPaz(8);
 
         assert(s.getPaz().size() == 3);
         testPassed("Destruktoriaus testas - objektas sukurtas");
-    } // Čia iš automatiškai kviečiamas destruktorius
+    } // Cia is automatiskai kvieciamas destruktorius
 
-    testPassed("Destruktor veikia be problemų (nėra memory leaks)");
+    testPassed("Destruktor veikia be problemu (nera memory leaks)");
 }
 
-// TEST #8: Išvesties operatorius (operator<<)
+// TEST #8: Isvesties operatorius (operator<<)
 void test_output_operator() {
-    printTestHeader("Išvesties Operatorius (operator<<)");
+    printTestHeader("Isvesties Operatorius (operator<<)");
 
-    Studentas s("Darius", "Dariuš", 93);
+    Studentas s("Darius", "Darius", 93);
     s.addPaz(9);
     s.addPaz(10);
     s.addPaz(9);
@@ -213,21 +213,21 @@ void test_output_operator() {
     string output = ss.str();
 
     assert(output.find("Vardas: Darius") != string::npos);
-    testPassed("Išvestis - vardas rastas");
+    testPassed("Isvestis - vardas rastas");
 
-    assert(output.find("Pavarde: Dariuš") != string::npos);
-    testPassed("Išvestis - pavardė rastas");
+    assert(output.find("Pavarde: Darius") != string::npos);
+    testPassed("Isvestis - pavarde rastas");
 
     assert(output.find("Egzaminas: 93") != string::npos);
-    testPassed("Išvestis - egzaminas rastas");
+    testPassed("Isvestis - egzaminas rastas");
 
-    cout << "Išvesties pavyzdys: " << endl;
+    cout << "Isvesties pavyzdys: " << endl;
     cout << "  " << s << endl;
 }
 
-// TEST #9: Įvesties operatorius (operator>>)
+// TEST #9: Ivesties operatorius (operator>>)
 void test_input_operator() {
-    printTestHeader("Įvesties Operatorius (operator>>)");
+    printTestHeader("Ivesties Operatorius (operator>>)");
 
     stringstream ss;
     ss << "Vaidas Vaidauskas 10 10 10 10 10 100";
@@ -236,19 +236,19 @@ void test_input_operator() {
     ss >> s;
 
     assert(s.getVardas() == "Vaidas");
-    testPassed("Įvestis - vardas nuskaitytas");
+    testPassed("Ivestis - vardas nuskaitytas");
 
     assert(s.getPavarde() == "Vaidauskas");
-    testPassed("Įvestis - pavardė nuskaitytas");
+    testPassed("Ivestis - pavarde nuskaitytas");
 
     assert(s.getEgz() == 100);
-    testPassed("Įvestis - egzaminas nuskaitytas");
+    testPassed("Ivestis - egzaminas nuskaitytas");
 
     assert(s.getPaz().size() == 5);
-    testPassed("Įvestis - pažymiai nuskaityti");
+    testPassed("Ivestis - pazymiai nuskaityti");
 
     assert(s.getPaz()[0] == 10);
-    testPassed("Įvestis - pažymio reikšmė teisingai nuskaitytas");
+    testPassed("Ivestis - pazymio reiksme teisingai nuskaitytas");
 }
 
 // TEST #10: I/O operatoriai kartu (Round-trip test)
@@ -273,20 +273,20 @@ void test_io_roundtrip() {
     ss >> s2;
 
     assert(s2.getVardas() == s1.getVardas());
-    testPassed("Round-trip - vardas saugai išsaugotas ir nuskaitytas");
+    testPassed("Round-trip - vardas saugai issaugotas ir nuskaitytas");
 
     assert(s2.getPavarde() == s1.getPavarde());
-    testPassed("Round-trip - pavardė saugai išsaugotas ir nuskaitytas");
+    testPassed("Round-trip - pavarde saugai issaugotas ir nuskaitytas");
 
     assert(s2.getPaz() == s1.getPaz());
-    testPassed("Round-trip - pažymiai saugai išsaugoti ir nuskaityti");
+    testPassed("Round-trip - pazymiai saugai issaugoti ir nuskaityti");
 }
 
 // TEST #11: Modificiravimas po kopijimo
 void test_modification_after_copy() {
     printTestHeader("Modificiravimas po Kopijimo");
 
-    Studentas s1("Elena", "Elenė", 85);
+    Studentas s1("Elena", "Elene", 85);
     s1.addPaz(7);
     s1.addPaz(8);
 
@@ -298,10 +298,10 @@ void test_modification_after_copy() {
 
     s2.addPaz(9);
     assert(s1.getPaz().size() == 2 && s2.getPaz().size() == 3);
-    testPassed("Pažymio pridėjimas - originalas nepaveiktas");
+    testPassed("Pazymio pridejimas - originalas nepaveiktas");
 }
 
-// TEST #12: Getter/Setter operacijų konsekvencija
+// TEST #12: Getter/Setter operaciju konsekvencija
 void test_getters_setters() {
     printTestHeader("Getters/Setters Konsekvencija");
 
@@ -311,9 +311,9 @@ void test_getters_setters() {
     assert(s.getVardas() == "Tomas");
     testPassed("Vardas setter/getter veikia");
 
-    s.setPavarde("Tomaš");
-    assert(s.getPavarde() == "Tomaš");
-    testPassed("Pavardė setter/getter veikia");
+    s.setPavarde("Tomas");
+    assert(s.getPavarde() == "Tomas");
+    testPassed("Pavarde setter/getter veikia");
 
     s.setEgz(100);
     assert(s.getEgz() == 100);
@@ -328,26 +328,26 @@ void test_getters_setters() {
     testPassed("Mediana setter/getter veikia");
 }
 
-// TEST #13: Vector operacijos su pažymiais
+// TEST #13: Vector operacijos su pazymiais
 void test_paz_operations() {
-    printTestHeader("Vector Operacijos su Pažymiais");
+    printTestHeader("Vector Operacijos su Pazymiais");
 
     Studentas s;
 
     assert(s.isPazEmpty());
-    testPassed("isPazEmpty() grąžina true tuščiam sąrašui");
+    testPassed("isPazEmpty() grazina true tusciam sarasui");
 
     s.addPaz(10);
     s.addPaz(9);
     assert(!s.isPazEmpty());
-    testPassed("isPazEmpty() grąžina false ne tuščiam sąrašui");
+    testPassed("isPazEmpty() grazina false ne tusciam sarasui");
 
     assert(s.getPaz().size() == 2);
-    testPassed("Pažymiai pridedami teisingai");
+    testPassed("Pazymiai pridedami teisingai");
 
     s.clearPaz();
     assert(s.isPazEmpty());
-    testPassed("clearPaz() išvalo pažymius");
+    testPassed("clearPaz() isvalo pazymius");
 }
 
 // MAIN FUNCTION - SUMMARY
@@ -381,7 +381,7 @@ int main() {
             cout << "\nVISI TESTAI PRIIMTI!\n" << endl;
             return 0;
         } else {
-            cout << "\nKai kurie testai nepraėjo. Patikrinkite kodą!\n" << endl;
+            cout << "\nKai kurie testai nepraejo. Patikrinkite koda!\n" << endl;
             return 1;
         }
     }

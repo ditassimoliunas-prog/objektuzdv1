@@ -1,4 +1,4 @@
-#include "../header_files/Studentas.h"
+﻿#include "../header_files/Studentas.h"
 #include "../header_files/mat_funkcijos.h"
 #include <iostream>
 
@@ -40,21 +40,28 @@ Studentas::Studentas(Studentas&& other) noexcept
     : vardas_(std::move(other.vardas_)), pavarde_(std::move(other.pavarde_)),
       paz_(std::move(other.paz_)), egz_(other.egz_), rez_(other.rez_),
       med_(other.med_) {
+    // Nustatiname kitą objektą į validią, tuščią būseną
     other.egz_ = 0;
     other.rez_ = 0.0;
     other.med_ = 0.0;
+    other.paz_.clear();  // Užtikrinti, kad vektorius yra tuščias
 }
 
 // Move assignment operator
 Studentas& Studentas::operator=(Studentas&& other) noexcept {
     if (this != &other) {
+        // Išvalome savo esamus duomenis
         paz_.clear();
+
+        // Perkėlime duomenis iš other
         vardas_ = std::move(other.vardas_);
         pavarde_ = std::move(other.pavarde_);
         paz_ = std::move(other.paz_);
         egz_ = other.egz_;
         rez_ = other.rez_;
         med_ = other.med_;
+
+        // Nustatiname other objektą į validią, tuščią būseną
         other.egz_ = 0;
         other.rez_ = 0.0;
         other.med_ = 0.0;
@@ -93,7 +100,7 @@ std::istream& Studentas::readStudent(std::istream& is) {
 
 // ===== I/O OPERATORIAI =====
 
-// I�vesties operatorius - i�spausdina student? ? sraut?
+// Išvesties operatorius - išspausdina student? ? sraut?
 std::ostream& operator<<(std::ostream& os, const Studentas& s) {
     os << "Vardas: " << s.vardas_ << " | Pavarde: " << s.pavarde_ << " | ";
     os << "Egzaminas: " << s.egz_ << " | Vidurkis rezultatas: " << s.rez_ << " | ";
@@ -104,13 +111,13 @@ std::ostream& operator<<(std::ostream& os, const Studentas& s) {
             os << paz << " ";
         }
     } else {
-        os << "(n?ra)";
+        os << "(nera)";
     }
 
     return os;
 }
 
-// ?vesties operatorius - nuskaito student? i� srauto
+// ?vesties operatorius - nuskaito student? iš srauto
 std::istream& operator>>(std::istream& is, Studentas& s) {
     return s.readStudent(is);
 }
