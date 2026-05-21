@@ -1,0 +1,9 @@
+# ninja log v7
+7	137	8005091709086787	CMakeFiles/programa.dir/objekt1uzd.cpp.obj	3efdc1da1d3ff5dc
+33	723	8005091709356864	CMakeFiles/programa.dir/extra_cpp/mat_funkcijos.cpp.obj	55040ed935e8ea46
+40	980	8005091709416805	CMakeFiles/programa.dir/extra_cpp/menu.cpp.obj	31a23dea889b936a
+23	1018	8005091709246942	CMakeFiles/programa.dir/extra_cpp/input.cpp.obj	dad82835cd0a6001
+48	1357	8005091709496822	CMakeFiles/programa.dir/extra_cpp/output.cpp.obj	6bd65b5155a9f934
+16	1449	8005091709176805	CMakeFiles/programa.dir/extra_cpp/duomenu_valdymas.cpp.obj	baa00de6f1bedf0e
+55	1845	8005091709566820	CMakeFiles/programa.dir/extra_cpp/testavimas.cpp.obj	176c0b5118a6d497
+1848	2194	8005091727491417	programa.exe	c6506f32599ae45c

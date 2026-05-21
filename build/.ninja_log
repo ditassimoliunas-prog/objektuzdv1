@@ -1,0 +1,14 @@
+# ninja log v7
+50	343	8011007400474796	CMakeFiles/programa.dir/objekt1uzd.cpp.obj	46dea4f18abda9ee
+83	1272	8011007400821465	CMakeFiles/programa.dir/extra_cpp/mat_funkcijos.cpp.obj	d0e43b8caba45ac0
+152	1362	8011007401482959	CMakeFiles/test_programa.dir/extra_cpp/mat_funkcijos.cpp.obj	fa903e2509e5dce6
+124	1625	8011007401232695	CMakeFiles/programa.dir/extra_cpp/Studentas.cpp.obj	1a2f991eeb39df5b
+93	1649	8011007400912804	CMakeFiles/programa.dir/extra_cpp/menu.cpp.obj	244faa2915b0be71
+75	1668	8011007400687045	CMakeFiles/programa.dir/extra_cpp/input.cpp.obj	554b0c6ebe4b7684
+133	1724	8011007401309158	CMakeFiles/test_programa.dir/test_studentas.cpp.obj	7a37619c4850bad0
+142	1771	8011007401417451	CMakeFiles/test_programa.dir/extra_cpp/Studentas.cpp.obj	1e9414bbdda428c3
+103	1927	8011007401027400	CMakeFiles/programa.dir/extra_cpp/output.cpp.obj	4481eaaf11f9852
+65	2136	8011007400647815	CMakeFiles/programa.dir/extra_cpp/duomenu_valdymas.cpp.obj	d7975647ab9bf66f
+114	2374	8011007401128126	CMakeFiles/programa.dir/extra_cpp/testavimas.cpp.obj	a98779ce98b62408
+1772	2739	8011007417705414	test_programa.exe	a1f93ca772bd016b
+2376	3180	8011007423630684	programa.exe	dc448f3e8aff3592

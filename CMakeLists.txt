@@ -31,3 +31,10 @@ set(SOURCES
 
 # Sukuriame ezkekutuojamąjį (executable) failą
 add_executable(programa ${SOURCES})
+
+# Testų programa
+add_executable(test_programa 
+    test_studentas.cpp 
+    extra_cpp/Studentas.cpp 
+    extra_cpp/mat_funkcijos.cpp
+)
