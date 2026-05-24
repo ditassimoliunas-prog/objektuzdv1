@@ -93,21 +93,21 @@ void test_copy_constructor() {
     testPassed("Kopijoje egzaminas sutampa");
 
     assert(s2.getPaz().size() == s1.getPaz().size());
-    testPassed("Kopijoje pazymiai kiekis sutampa");
+    testPassed("Kopijoje pazymiu kiekis sutampa");
 
     assert(s2.getPaz()[0] == s1.getPaz()[0]);
-    testPassed("Kopijoje pazymiai vertes sutampa");
+    testPassed("Kopijoje pazymiu vertes sutampa");
 
     // Tikriname, kad tai skirtingi objektai (deep copy)
     Studentas s3 = s1;
     s3.addPaz(100);
     assert(s1.getPaz().size() != s3.getPaz().size());
-    testPassed("Deep copy veikia - modifikacija nepaveikia originala");
+    testPassed("Deep copy veikia - modifikacija nepaveikia originalo");
 }
 
 // TEST #4: Copy assignment operator
 void test_copy_assignment() {
-    printTestHeader("Copy Assignment Operator");
+    printTestHeader("Copy Assignment Operatorius");
 
     Studentas s1("Marta", "Martine", 92);
     s1.addPaz(7);
@@ -155,9 +155,9 @@ void test_move_constructor() {
     testPassed("Move konstruktorius - saltinis istustintas");
 }
 
-// TEST #6: Move assignment operator
+// TEST #6: Move assignment operatorius
 void test_move_assignment() {
-    printTestHeader("Move Assignment Operator");
+    printTestHeader("Move Assignment Operatorius");
 
     Studentas s1("Ruta", "Rute", 90);
     s1.addPaz(5);
@@ -239,7 +239,7 @@ void test_input_operator() {
     testPassed("Ivestis - vardas nuskaitytas");
 
     assert(s.getPavarde() == "Vaidauskas");
-    testPassed("Ivestis - pavarde nuskaitytas");
+    testPassed("Ivestis - pavarde nuskaityta");
 
     assert(s.getEgz() == 100);
     testPassed("Ivestis - egzaminas nuskaitytas");
@@ -248,7 +248,7 @@ void test_input_operator() {
     testPassed("Ivestis - pazymiai nuskaityti");
 
     assert(s.getPaz()[0] == 10);
-    testPassed("Ivestis - pazymio reiksme teisingai nuskaitytas");
+    testPassed("Ivestis - pazymio reiksme teisingai nuskaityta");
 }
 
 // TEST #10: I/O operatoriai kartu (Round-trip test)
@@ -282,9 +282,9 @@ void test_io_roundtrip() {
     testPassed("Round-trip - pazymiai saugai issaugoti ir nuskaityti");
 }
 
-// TEST #11: Modificiravimas po kopijimo
+// TEST #11: Modifikavimas po kopijavimo
 void test_modification_after_copy() {
-    printTestHeader("Modificiravimas po Kopijimo");
+    printTestHeader("Modifikavimas po kopijavimo");
 
     Studentas s1("Elena", "Elene", 85);
     s1.addPaz(7);

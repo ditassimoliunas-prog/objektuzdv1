@@ -687,11 +687,11 @@ events:
       
       The output was:
       0
-      Microsoft (R) C/C++ Optimizing Compiler Version 19.51.36243 for x86
+      Microsoft (R) C/C++ Optimizing Compiler Version 19.51.36244 for x86
       Copyright (C) Microsoft Corporation.  All rights reserved.
       
       CMakeCCompilerId.c
-      Microsoft (R) Incremental Linker Version 14.51.36243.0
+      Microsoft (R) Incremental Linker Version 14.51.36244.0
       Copyright (C) Microsoft Corporation.  All rights reserved.
       
       /out:CMakeCCompilerId.exe 
@@ -1592,11 +1592,11 @@ events:
       
       The output was:
       0
-      Microsoft (R) C/C++ Optimizing Compiler Version 19.51.36243 for x86
+      Microsoft (R) C/C++ Optimizing Compiler Version 19.51.36244 for x86
       Copyright (C) Microsoft Corporation.  All rights reserved.
       
       CMakeCXXCompilerId.cpp
-      Microsoft (R) Incremental Linker Version 14.51.36243.0
+      Microsoft (R) Incremental Linker Version 14.51.36244.0
       Copyright (C) Microsoft Corporation.  All rights reserved.
       
       /out:CMakeCXXCompilerId.exe 
@@ -2025,8 +2025,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "C:/Users/ditas/source/repos/ditassimoliunas-prog/objektuzdv1/build/CMakeFiles/CMakeScratch/TryCompile-89dkj5"
-      binary: "C:/Users/ditas/source/repos/ditassimoliunas-prog/objektuzdv1/build/CMakeFiles/CMakeScratch/TryCompile-89dkj5"
+      source: "C:/Users/ditas/source/repos/ditassimoliunas-prog/objektuzdv1/build/CMakeFiles/CMakeScratch/TryCompile-i5joy8"
+      binary: "C:/Users/ditas/source/repos/ditassimoliunas-prog/objektuzdv1/build/CMakeFiles/CMakeScratch/TryCompile-i5joy8"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
       CMAKE_C_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
@@ -2035,11 +2035,11 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/ditas/source/repos/ditassimoliunas-prog/objektuzdv1/build/CMakeFiles/CMakeScratch/TryCompile-89dkj5'
+        Change Dir: 'C:/Users/ditas/source/repos/ditassimoliunas-prog/objektuzdv1/build/CMakeFiles/CMakeScratch/TryCompile-i5joy8'
         
-        Run Build Command(s): C:/PROGRA~1/MIB055~1/18/COMMUN~1/Common7/IDE/COMMON~1/MICROS~1/CMake/Ninja/ninja.exe -v cmTC_3e349
-        [1/2] C:\\PROGRA~1\\MIB055~1\\18\\COMMUN~1\\VC\\Tools\\MSVC\\1451~1.362\\bin\\Hostx86\\x86\\cl.exe  /nologo -D_MBCS  /DWIN32 /D_WINDOWS /W3  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_3e349.dir\\CMakeCCompilerABI.c.obj /FdCMakeFiles\\cmTC_3e349.dir\\ /FS -c "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-4.2\\Modules\\CMakeCCompilerABI.c"
-        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E vs_link_exe --msvc-ver=1951 --intdir=CMakeFiles\\cmTC_3e349.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x86\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x86\\mt.exe --manifests  -- C:\\PROGRA~1\\MIB055~1\\18\\COMMUN~1\\VC\\Tools\\MSVC\\1451~1.362\\bin\\Hostx86\\x86\\link.exe /nologo CMakeFiles\\cmTC_3e349.dir\\CMakeCCompilerABI.c.obj  /out:cmTC_3e349.exe /implib:cmTC_3e349.lib /pdb:cmTC_3e349.pdb /version:0.0 /machine:X86  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        Run Build Command(s): C:/PROGRA~1/MIB055~1/18/COMMUN~1/Common7/IDE/COMMON~1/MICROS~1/CMake/Ninja/ninja.exe -v cmTC_50d91
+        [1/2] C:\\PROGRA~1\\MIB055~1\\18\\COMMUN~1\\VC\\Tools\\MSVC\\1451~1.362\\bin\\Hostx86\\x86\\cl.exe  /nologo -D_MBCS  /DWIN32 /D_WINDOWS /W3  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_50d91.dir\\CMakeCCompilerABI.c.obj /FdCMakeFiles\\cmTC_50d91.dir\\ /FS -c "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-4.2\\Modules\\CMakeCCompilerABI.c"
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E vs_link_exe --msvc-ver=1951 --intdir=CMakeFiles\\cmTC_50d91.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x86\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x86\\mt.exe --manifests  -- C:\\PROGRA~1\\MIB055~1\\18\\COMMUN~1\\VC\\Tools\\MSVC\\1451~1.362\\bin\\Hostx86\\x86\\link.exe /nologo CMakeFiles\\cmTC_50d91.dir\\CMakeCCompilerABI.c.obj  /out:cmTC_50d91.exe /implib:cmTC_50d91.lib /pdb:cmTC_50d91.pdb /version:0.0 /machine:X86  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
         
       exitCode: 0
   -
@@ -2068,7 +2068,7 @@ events:
       - "CMakeLists.txt:4 (project)"
     message: |
       Running the C compiler's linker: "C:/PROGRA~1/MIB055~1/18/COMMUN~1/VC/Tools/MSVC/1451~1.362/bin/Hostx86/x86/link.exe" "-v"
-      Microsoft (R) Incremental Linker Version 14.51.36243.0
+      Microsoft (R) Incremental Linker Version 14.51.36244.0
       Copyright (C) Microsoft Corporation.  All rights reserved.
   -
     kind: "try_compile-v1"
@@ -2079,8 +2079,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/Users/ditas/source/repos/ditassimoliunas-prog/objektuzdv1/build/CMakeFiles/CMakeScratch/TryCompile-trqgbf"
-      binary: "C:/Users/ditas/source/repos/ditassimoliunas-prog/objektuzdv1/build/CMakeFiles/CMakeScratch/TryCompile-trqgbf"
+      source: "C:/Users/ditas/source/repos/ditassimoliunas-prog/objektuzdv1/build/CMakeFiles/CMakeScratch/TryCompile-8k6nmt"
+      binary: "C:/Users/ditas/source/repos/ditassimoliunas-prog/objektuzdv1/build/CMakeFiles/CMakeScratch/TryCompile-8k6nmt"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
@@ -2090,11 +2090,11 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/ditas/source/repos/ditassimoliunas-prog/objektuzdv1/build/CMakeFiles/CMakeScratch/TryCompile-trqgbf'
+        Change Dir: 'C:/Users/ditas/source/repos/ditassimoliunas-prog/objektuzdv1/build/CMakeFiles/CMakeScratch/TryCompile-8k6nmt'
         
-        Run Build Command(s): C:/PROGRA~1/MIB055~1/18/COMMUN~1/Common7/IDE/COMMON~1/MICROS~1/CMake/Ninja/ninja.exe -v cmTC_4f728
-        [1/2] C:\\PROGRA~1\\MIB055~1\\18\\COMMUN~1\\VC\\Tools\\MSVC\\1451~1.362\\bin\\Hostx86\\x86\\cl.exe  /nologo /TP -D_MBCS  /DWIN32 /D_WINDOWS /W3 /GR /EHsc  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_4f728.dir\\CMakeCXXCompilerABI.cpp.obj /FdCMakeFiles\\cmTC_4f728.dir\\ /FS -c "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"
-        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E vs_link_exe --msvc-ver=1951 --intdir=CMakeFiles\\cmTC_4f728.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x86\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x86\\mt.exe --manifests  -- C:\\PROGRA~1\\MIB055~1\\18\\COMMUN~1\\VC\\Tools\\MSVC\\1451~1.362\\bin\\Hostx86\\x86\\link.exe /nologo CMakeFiles\\cmTC_4f728.dir\\CMakeCXXCompilerABI.cpp.obj  /out:cmTC_4f728.exe /implib:cmTC_4f728.lib /pdb:cmTC_4f728.pdb /version:0.0 /machine:X86  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        Run Build Command(s): C:/PROGRA~1/MIB055~1/18/COMMUN~1/Common7/IDE/COMMON~1/MICROS~1/CMake/Ninja/ninja.exe -v cmTC_c72ff
+        [1/2] C:\\PROGRA~1\\MIB055~1\\18\\COMMUN~1\\VC\\Tools\\MSVC\\1451~1.362\\bin\\Hostx86\\x86\\cl.exe  /nologo /TP -D_MBCS  /DWIN32 /D_WINDOWS /W3 /GR /EHsc  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_c72ff.dir\\CMakeCXXCompilerABI.cpp.obj /FdCMakeFiles\\cmTC_c72ff.dir\\ /FS -c "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E vs_link_exe --msvc-ver=1951 --intdir=CMakeFiles\\cmTC_c72ff.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x86\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x86\\mt.exe --manifests  -- C:\\PROGRA~1\\MIB055~1\\18\\COMMUN~1\\VC\\Tools\\MSVC\\1451~1.362\\bin\\Hostx86\\x86\\link.exe /nologo CMakeFiles\\cmTC_c72ff.dir\\CMakeCXXCompilerABI.cpp.obj  /out:cmTC_c72ff.exe /implib:cmTC_c72ff.lib /pdb:cmTC_c72ff.pdb /version:0.0 /machine:X86  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
         
       exitCode: 0
   -
@@ -2123,6 +2123,6 @@ events:
       - "CMakeLists.txt:4 (project)"
     message: |
       Running the CXX compiler's linker: "C:/PROGRA~1/MIB055~1/18/COMMUN~1/VC/Tools/MSVC/1451~1.362/bin/Hostx86/x86/link.exe" "-v"
-      Microsoft (R) Incremental Linker Version 14.51.36243.0
+      Microsoft (R) Incremental Linker Version 14.51.36244.0
       Copyright (C) Microsoft Corporation.  All rights reserved.
 ...

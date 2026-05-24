@@ -119,6 +119,16 @@ build CMakeFiles\programa.dir\extra_cpp\testavimas.cpp.obj: CXX_COMPILER__progra
   TARGET_PDB = programa.pdb
   TARGET_SUPPORT_DIR = CMakeFiles\programa.dir
 
+build CMakeFiles\programa.dir\extra_cpp\Zmogus.cpp.obj: CXX_COMPILER__programa_unscanned_Debug C$:\Users\ditas\source\repos\ditassimoliunas-prog\objektuzdv1\extra_cpp\Zmogus.cpp || cmake_object_order_depends_target_programa
+  CONFIG = Debug
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /W3 /MDd /Zi /Ob0 /Od /RTC1 -std:c++17
+  INCLUDES = -IC:\Users\ditas\source\repos\ditassimoliunas-prog\objektuzdv1\header_files
+  OBJECT_DIR = CMakeFiles\programa.dir
+  OBJECT_FILE_DIR = CMakeFiles\programa.dir\extra_cpp
+  TARGET_COMPILE_PDB = CMakeFiles\programa.dir\
+  TARGET_PDB = programa.pdb
+  TARGET_SUPPORT_DIR = CMakeFiles\programa.dir
+
 build CMakeFiles\programa.dir\extra_cpp\Studentas.cpp.obj: CXX_COMPILER__programa_unscanned_Debug C$:\Users\ditas\source\repos\ditassimoliunas-prog\objektuzdv1\extra_cpp\Studentas.cpp || cmake_object_order_depends_target_programa
   CONFIG = Debug
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /W3 /MDd /Zi /Ob0 /Od /RTC1 -std:c++17
@@ -137,7 +147,7 @@ build CMakeFiles\programa.dir\extra_cpp\Studentas.cpp.obj: CXX_COMPILER__program
 #############################################
 # Link the executable programa.exe
 
-build programa.exe: CXX_EXECUTABLE_LINKER__programa_Debug CMakeFiles\programa.dir\objekt1uzd.cpp.obj CMakeFiles\programa.dir\extra_cpp\duomenu_valdymas.cpp.obj CMakeFiles\programa.dir\extra_cpp\input.cpp.obj CMakeFiles\programa.dir\extra_cpp\mat_funkcijos.cpp.obj CMakeFiles\programa.dir\extra_cpp\menu.cpp.obj CMakeFiles\programa.dir\extra_cpp\output.cpp.obj CMakeFiles\programa.dir\extra_cpp\testavimas.cpp.obj CMakeFiles\programa.dir\extra_cpp\Studentas.cpp.obj
+build programa.exe: CXX_EXECUTABLE_LINKER__programa_Debug CMakeFiles\programa.dir\objekt1uzd.cpp.obj CMakeFiles\programa.dir\extra_cpp\duomenu_valdymas.cpp.obj CMakeFiles\programa.dir\extra_cpp\input.cpp.obj CMakeFiles\programa.dir\extra_cpp\mat_funkcijos.cpp.obj CMakeFiles\programa.dir\extra_cpp\menu.cpp.obj CMakeFiles\programa.dir\extra_cpp\output.cpp.obj CMakeFiles\programa.dir\extra_cpp\testavimas.cpp.obj CMakeFiles\programa.dir\extra_cpp\Zmogus.cpp.obj CMakeFiles\programa.dir\extra_cpp\Studentas.cpp.obj
   CONFIG = Debug
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /W3 /MDd /Zi /Ob0 /Od /RTC1
   LINK_FLAGS = /machine:X86 /debug /INCREMENTAL /subsystem:console
@@ -170,6 +180,16 @@ build CMakeFiles\test_programa.dir\test_studentas.cpp.obj: CXX_COMPILER__test_pr
   TARGET_PDB = test_programa.pdb
   TARGET_SUPPORT_DIR = CMakeFiles\test_programa.dir
 
+build CMakeFiles\test_programa.dir\extra_cpp\Zmogus.cpp.obj: CXX_COMPILER__test_programa_unscanned_Debug C$:\Users\ditas\source\repos\ditassimoliunas-prog\objektuzdv1\extra_cpp\Zmogus.cpp || cmake_object_order_depends_target_test_programa
+  CONFIG = Debug
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /W3 /MDd /Zi /Ob0 /Od /RTC1 -std:c++17
+  INCLUDES = -IC:\Users\ditas\source\repos\ditassimoliunas-prog\objektuzdv1\header_files
+  OBJECT_DIR = CMakeFiles\test_programa.dir
+  OBJECT_FILE_DIR = CMakeFiles\test_programa.dir\extra_cpp
+  TARGET_COMPILE_PDB = CMakeFiles\test_programa.dir\
+  TARGET_PDB = test_programa.pdb
+  TARGET_SUPPORT_DIR = CMakeFiles\test_programa.dir
+
 build CMakeFiles\test_programa.dir\extra_cpp\Studentas.cpp.obj: CXX_COMPILER__test_programa_unscanned_Debug C$:\Users\ditas\source\repos\ditassimoliunas-prog\objektuzdv1\extra_cpp\Studentas.cpp || cmake_object_order_depends_target_test_programa
   CONFIG = Debug
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /W3 /MDd /Zi /Ob0 /Od /RTC1 -std:c++17
@@ -198,7 +218,7 @@ build CMakeFiles\test_programa.dir\extra_cpp\mat_funkcijos.cpp.obj: CXX_COMPILER
 #############################################
 # Link the executable test_programa.exe
 
-build test_programa.exe: CXX_EXECUTABLE_LINKER__test_programa_Debug CMakeFiles\test_programa.dir\test_studentas.cpp.obj CMakeFiles\test_programa.dir\extra_cpp\Studentas.cpp.obj CMakeFiles\test_programa.dir\extra_cpp\mat_funkcijos.cpp.obj
+build test_programa.exe: CXX_EXECUTABLE_LINKER__test_programa_Debug CMakeFiles\test_programa.dir\test_studentas.cpp.obj CMakeFiles\test_programa.dir\extra_cpp\Zmogus.cpp.obj CMakeFiles\test_programa.dir\extra_cpp\Studentas.cpp.obj CMakeFiles\test_programa.dir\extra_cpp\mat_funkcijos.cpp.obj
   CONFIG = Debug
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /W3 /MDd /Zi /Ob0 /Od /RTC1
   LINK_FLAGS = /machine:X86 /debug /INCREMENTAL /subsystem:console
