@@ -89,11 +89,13 @@ Programos logika išlieka ta pati kaip v1.2:
 
 **Svarbu:** Nuo v1.5 versijos, žmogaus savybės (vardas, pavardė) saugomos Žmogus bazinėje klasėje, o Studentas jas paveldi. Tai leidžia ateityje kurti kitas išvestines klases iš Žmogaus (pvz. Dėstytojas, Administratorius).
 
-<img width="437" height="734" alt="image" src="https://github.com/user-attachments/assets/e71d41ea-3766-4f6b-a89f-10bd49b48f55" />
 
-<img width="917" height="729" alt="image" src="https://github.com/user-attachments/assets/0d84eae5-1925-43e6-9843-b34291d9ad27" />
+<img width="424" height="722" alt="Screenshot 2026-05-24 171304" src="https://github.com/user-attachments/assets/378556d4-baec-41be-ba2b-20b1401cf511" />
+<img width="835" height="689" alt="Screenshot 2026-05-24 171330" src="https://github.com/user-attachments/assets/8f343a65-4895-40bf-aa0c-5da988354cf1" />
+<img width="459" height="383" alt="Screenshot 2026-05-24 171440" src="https://github.com/user-attachments/assets/452b239b-0c8e-47ff-bfcb-115a8902081d" />
 
-<img width="550" height="394" alt="image" src="https://github.com/user-attachments/assets/d950c503-e1ff-4e3d-8e4a-8bf03867e352" />
+
+
 
 
 
