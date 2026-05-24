@@ -3,14 +3,22 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include "Zmogus.h"
 
 using std::string;
 using std::vector;
 
-class Studentas {
+/**
+ * @class Studentas
+ * @brief Išvestinė klasė iš Zmogus - aprašo studentą
+ * 
+ * Studentas paveldi žmogaus duomenis (vardas, pavardė) iš Zmogus klasės
+ * ir papildomai turi savus duomenis: pažymius, egzamino rezultatą ir galutinius rezultatus.
+ * 
+ * Implementuoja Rule of Five: default, parametrizuotas, copy, move konstruktorius ir destruktorius.
+ */
+class Studentas : public Zmogus {
 private:
-    string vardas_;
-    string pavarde_;
     vector<int> paz_;
     int egz_;
     double rez_;
@@ -19,12 +27,15 @@ private:
     // Privatus helperis perstatymui, jei norėsime
     void paskaiciuotiGalutinius();
 
+    // Implementacija abstraktaus metodo iš Zmogus
+    virtual void paskaiciuoti() override;
+
 public:
     // Numatytasis konstruktorius
-    Studentas() : vardas_("A"), pavarde_("BB"), egz_(0), rez_(0.0), med_(0.0) {}
+    Studentas() : Zmogus("A", "BB"), egz_(0), rez_(0.0), med_(0.0) {}
 
     // Parametrizuotas konstruktorius
-    Studentas(string v, string p, int e) : vardas_(v), pavarde_(p), egz_(e), rez_(0.0), med_(0.0) {}
+    Studentas(string v, string p, int e) : Zmogus(v, p), egz_(e), rez_(0.0), med_(0.0) {}
 
     // Konstruktorius su nuskaitymu is srauto
     Studentas(std::istream& is);
@@ -46,8 +57,6 @@ public:
     Studentas& operator=(Studentas&& other) noexcept;
 
     // Getters
-    inline string getVardas() const { return vardas_; }
-    inline string getPavarde() const { return pavarde_; }
     inline const vector<int>& getPaz() const { return paz_; }
     inline vector<int>& getPaz() { return paz_; }
     inline int getEgz() const { return egz_; }
@@ -55,8 +64,6 @@ public:
     inline double getMed() const { return med_; }
 
     // Setters
-    inline void setVardas(const string& v) { vardas_ = v; }
-    inline void setPavarde(const string& p) { pavarde_ = p; }
     inline void setEgz(int e) { egz_ = e; }
     inline void setRez(double r) { rez_ = r; }
     inline void setMed(double m) { med_ = m; }
@@ -70,6 +77,13 @@ public:
 
     // Skaitymas ir skaičiavimas
     std::istream& readStudent(std::istream& is);
+
+    // ===== ABSTRAKTAUS METODO IMPLEMENTACIJA =====
+    /**
+     * @brief Implementuoja abstraktų metodą iš Zmogus
+     * @return Pilna informacija apie studentą
+     */
+    virtual string getInfo() const override;
 
     // ===== I/O OPERATORIAI =====
     // Išvesties operatorius (friend)

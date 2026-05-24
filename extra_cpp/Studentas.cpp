@@ -5,7 +5,7 @@
 using std::istream;
 
 // Nuskaitymas is srauto konstruktoriuje
-Studentas::Studentas(std::istream& is) : egz_(0), rez_(0.0), med_(0.0) {
+Studentas::Studentas(std::istream& is) : Zmogus(), egz_(0), rez_(0.0), med_(0.0) {
     readStudent(is);
 }
 
@@ -18,15 +18,15 @@ Studentas::~Studentas() {
 
 // Copy konstruktorius
 Studentas::Studentas(const Studentas& other)
-    : vardas_(other.vardas_), pavarde_(other.pavarde_), paz_(other.paz_),
+    : Zmogus(other.vardas_, other.pavarde_), paz_(other.paz_),
       egz_(other.egz_), rez_(other.rez_), med_(other.med_) {
 }
 
 // Copy assignment operator
 Studentas& Studentas::operator=(const Studentas& other) {
     if (this != &other) {
-        vardas_ = other.vardas_;
-        pavarde_ = other.pavarde_;
+        setVardas(other.getVardas());
+        setPavarde(other.getPavarde());
         paz_ = other.paz_;
         egz_ = other.egz_;
         rez_ = other.rez_;
@@ -37,13 +37,13 @@ Studentas& Studentas::operator=(const Studentas& other) {
 
 // Move konstruktorius
 Studentas::Studentas(Studentas&& other) noexcept
-    : vardas_(std::move(other.vardas_)), pavarde_(std::move(other.pavarde_)),
+    : Zmogus(std::move(other.vardas_), std::move(other.pavarde_)),
       paz_(std::move(other.paz_)), egz_(other.egz_), rez_(other.rez_),
       med_(other.med_) {
     // Nustatiname kitą objektą į validią, tuščią būseną
-    other.egz_ = 0;
-    other.rez_ = 0.0;
-    other.med_ = 0.0;
+    other.setEgz(0);
+    other.setRez(0.0);
+    other.setMed(0.0);
     other.paz_.clear();  // Užtikrinti, kad vektorius yra tuščias
 }
 
@@ -54,20 +54,25 @@ Studentas& Studentas::operator=(Studentas&& other) noexcept {
         paz_.clear();
 
         // Perkėlime duomenis iš other
-        vardas_ = std::move(other.vardas_);
-        pavarde_ = std::move(other.pavarde_);
+        setVardas(std::move(other.vardas_));
+        setPavarde(std::move(other.pavarde_));
         paz_ = std::move(other.paz_);
         egz_ = other.egz_;
         rez_ = other.rez_;
         med_ = other.med_;
 
         // Nustatiname other objektą į validią, tuščią būseną
-        other.egz_ = 0;
-        other.rez_ = 0.0;
-        other.med_ = 0.0;
+        other.setEgz(0);
+        other.setRez(0.0);
+        other.setMed(0.0);
         other.paz_.clear();
     }
     return *this;
+}
+
+// Implementacija abstraktaus metodo iš Zmogus
+string Studentas::getInfo() const {
+    return getVardas() + " " + getPavarde();
 }
 
 // Privati pagalbine funkcija
@@ -83,10 +88,18 @@ void Studentas::paskaiciuotiGalutinius() {
     }
 }
 
+// Implementacija abstraktaus metodo paskaiciuoti() iš Zmogus
+void Studentas::paskaiciuoti() {
+    paskaiciuotiGalutinius();
+}
+
 // Duomenu nuskaitymas ir apskaiciavimas
 std::istream& Studentas::readStudent(std::istream& is) {
-    is >> vardas_ >> pavarde_;
+    string vardas, pavarde;
+    is >> vardas >> pavarde;
     if (!is) return is;
+    setVardas(vardas);
+    setPavarde(pavarde);
     paz_.clear();
     int p;
     for (int i = 0; i < 5; i++) {
@@ -102,7 +115,7 @@ std::istream& Studentas::readStudent(std::istream& is) {
 
 // Išvesties operatorius - išspausdina student? ? sraut?
 std::ostream& operator<<(std::ostream& os, const Studentas& s) {
-    os << "Vardas: " << s.vardas_ << " | Pavarde: " << s.pavarde_ << " | ";
+    os << "Vardas: " << s.getVardas() << " | Pavarde: " << s.getPavarde() << " | ";
     os << "Egzaminas: " << s.egz_ << " | Vidurkis rezultatas: " << s.rez_ << " | ";
     os << "Mediana rezultatas: " << s.med_ << " | Pazymiai: ";
 

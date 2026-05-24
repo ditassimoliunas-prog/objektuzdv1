@@ -26,6 +26,7 @@ set(SOURCES
     extra_cpp/menu.cpp 
     extra_cpp/output.cpp 
     extra_cpp/testavimas.cpp
+    extra_cpp/Zmogus.cpp
     extra_cpp/Studentas.cpp
 )
 
@@ -35,6 +36,7 @@ add_executable(programa ${SOURCES})
 # Testų programa
 add_executable(test_programa 
     test_studentas.cpp 
+    extra_cpp/Zmogus.cpp
     extra_cpp/Studentas.cpp 
     extra_cpp/mat_funkcijos.cpp
 )
