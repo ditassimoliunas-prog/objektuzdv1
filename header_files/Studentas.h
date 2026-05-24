@@ -8,15 +8,10 @@
 using std::string;
 using std::vector;
 
-/**
- * @class Studentas
- * @brief Išvestinė klasė iš Zmogus - aprašo studentą
- * 
- * Studentas paveldi žmogaus duomenis (vardas, pavardė) iš Zmogus klasės
- * ir papildomai turi savus duomenis: pažymius, egzamino rezultatą ir galutinius rezultatus.
- * 
- * Implementuoja Rule of Five: default, parametrizuotas, copy, move konstruktorius ir destruktorius.
- */
+// Išvestinė klasė iš Zmogus - aprašo studentą
+// Paveldi žmogaus duomenis (vardas, pavardė) iš Zmogus klasės
+// Turi papildomus duomenis: pažymius, egzamino rezultatą ir galutinius rezultatus
+// Implementuoja Rule of Five
 class Studentas : public Zmogus {
 private:
     vector<int> paz_;
@@ -24,7 +19,7 @@ private:
     double rez_;
     double med_;
 
-    // Privatus helperis perstatymui, jei norėsime
+    // Privatas helperis skaičiavimams
     void paskaiciuotiGalutinius();
 
     // Implementacija abstraktaus metodo iš Zmogus
@@ -40,7 +35,8 @@ public:
     // Konstruktorius su nuskaitymu is srauto
     Studentas(std::istream& is);
 
-    // ===== RULE OF FIVE =====
+    // Rule of Five
+
     // Destruktorius
     ~Studentas();
 
@@ -68,7 +64,7 @@ public:
     inline void setRez(double r) { rez_ = r; }
     inline void setMed(double m) { med_ = m; }
 
-    // Methods for pazymiai
+    // Darbas su pažymiais
     inline void addPaz(int p) { paz_.push_back(p); }
     inline void clearPaz() { paz_.clear(); }
     inline void reservePaz(size_t n) { paz_.reserve(n); }
@@ -78,18 +74,11 @@ public:
     // Skaitymas ir skaičiavimas
     std::istream& readStudent(std::istream& is);
 
-    // ===== ABSTRAKTAUS METODO IMPLEMENTACIJA =====
-    /**
-     * @brief Implementuoja abstraktų metodą iš Zmogus
-     * @return Pilna informacija apie studentą
-     */
+    // Implementacija abstraktaus metodo iš Zmogus
     virtual string getInfo() const override;
 
-    // ===== I/O OPERATORIAI =====
-    // Išvesties operatorius (friend)
+    // I/O operatoriai
     friend std::ostream& operator<<(std::ostream& os, const Studentas& s);
-
-    // Įvesties operatorius (friend)
     friend std::istream& operator>>(std::istream& is, Studentas& s);
 };
 

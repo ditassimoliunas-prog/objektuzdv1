@@ -9,7 +9,7 @@ Studentas::Studentas(std::istream& is) : Zmogus(), egz_(0), rez_(0.0), med_(0.0)
     readStudent(is);
 }
 
-// ===== RULE OF FIVE IMPLEMENTACIJA =====
+// ===== RULE OF FIVE =====
 
 // Destruktorius
 Studentas::~Studentas() {
@@ -40,28 +40,22 @@ Studentas::Studentas(Studentas&& other) noexcept
     : Zmogus(std::move(other.vardas_), std::move(other.pavarde_)),
       paz_(std::move(other.paz_)), egz_(other.egz_), rez_(other.rez_),
       med_(other.med_) {
-    // Nustatiname kitą objektą į validią, tuščią būseną
     other.setEgz(0);
     other.setRez(0.0);
     other.setMed(0.0);
-    other.paz_.clear();  // Užtikrinti, kad vektorius yra tuščias
+    other.paz_.clear();
 }
 
 // Move assignment operator
 Studentas& Studentas::operator=(Studentas&& other) noexcept {
     if (this != &other) {
-        // Išvalome savo esamus duomenis
         paz_.clear();
-
-        // Perkėlime duomenis iš other
         setVardas(std::move(other.vardas_));
         setPavarde(std::move(other.pavarde_));
         paz_ = std::move(other.paz_);
         egz_ = other.egz_;
         rez_ = other.rez_;
         med_ = other.med_;
-
-        // Nustatiname other objektą į validią, tuščią būseną
         other.setEgz(0);
         other.setRez(0.0);
         other.setMed(0.0);
@@ -113,7 +107,7 @@ std::istream& Studentas::readStudent(std::istream& is) {
 
 // ===== I/O OPERATORIAI =====
 
-// Išvesties operatorius - išspausdina student? ? sraut?
+// Išvesties operatorius
 std::ostream& operator<<(std::ostream& os, const Studentas& s) {
     os << "Vardas: " << s.getVardas() << " | Pavarde: " << s.getPavarde() << " | ";
     os << "Egzaminas: " << s.egz_ << " | Vidurkis rezultatas: " << s.rez_ << " | ";
