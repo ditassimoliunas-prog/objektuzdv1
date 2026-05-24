@@ -38,7 +38,25 @@ build/
 *.a
 *.so
 
-# Visual Studio 2015/2017 cache/options directory
+# CMake
+CMakeUserPresets.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Dependencies
+*.lib
+*.dll
+
+# Visual Studio 2015/2017/2019/2022 cache/options directory
 .vs/
 # Uncomment if you have tasks that create the project's static files in wwwroot
 #wwwroot/
