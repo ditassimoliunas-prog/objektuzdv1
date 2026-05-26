@@ -389,6 +389,7 @@ dokumentacija/
 doxygen_warnings.log
 
 # CMake build directories (nereikalingi commit)
+build/
 build_o1/
 out/
 

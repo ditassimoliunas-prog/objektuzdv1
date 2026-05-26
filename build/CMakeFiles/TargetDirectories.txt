@@ -1,4 +1,0 @@
-C:/Users/ditas/source/repos/ditassimoliunas-prog/objektuzdv1/build/CMakeFiles/programa.dir
-C:/Users/ditas/source/repos/ditassimoliunas-prog/objektuzdv1/build/CMakeFiles/test_programa.dir
-C:/Users/ditas/source/repos/ditassimoliunas-prog/objektuzdv1/build/CMakeFiles/edit_cache.dir
-C:/Users/ditas/source/repos/ditassimoliunas-prog/objektuzdv1/build/CMakeFiles/rebuild_cache.dir
