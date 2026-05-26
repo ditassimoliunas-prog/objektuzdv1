@@ -383,4 +383,18 @@ MigrationBackup/
 .ionide/
 
 # Fody - auto-generated XML schema
-FodyWeavers.xsd
+
+# Doxygen
+dokumentacija/
+doxygen_warnings.log
+
+# CMake build directories (nereikalingi commit)
+build_o1/
+out/
+
+# Naudojami tik testavimui
+*.zip
+
+# Plan failai (naudojami tik kūrimo metu)
+plan.md
+
