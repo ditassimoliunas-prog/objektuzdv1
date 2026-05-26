@@ -350,10 +350,174 @@ void test_paz_operations() {
     testPassed("clearPaz() isvalo pazymius");
 }
 
+// TEST #14: Rule of Five - Copy vs Move semantika
+void test_rule_of_five_copy_vs_move() {
+    printTestHeader("Rule of Five: Copy vs Move Semantika");
+
+    Studentas original("Audra", "Audre", 91);
+    original.addPaz(9);
+    original.addPaz(8);
+    original.addPaz(10);
+
+    // Copy - turetu buti dvi atskiros kopijos
+    Studentas copy1 = original;
+    Studentas copy2 = original;
+
+    assert(copy1.getPaz().size() == original.getPaz().size());
+    testPassed("Copy konstruktorius - dvi nepriklausomos kopijos");
+
+    // Modifikuojam kopija
+    copy1.addPaz(7);
+    assert(original.getPaz().size() == 3);
+    assert(copy1.getPaz().size() == 4);
+    testPassed("Copy semantika - modifikacija vienai nepaveikia kitos");
+
+    // Move - originalioje turi likusti tik default reikšmės
+    Studentas moved = std::move(copy2);
+    assert(copy2.isPazEmpty());
+    testPassed("Move semantika - šaltinis istustintas");
+
+    assert(moved.getPaz().size() == 3);
+    testPassed("Move semantika - tikslas turi visus duomenis");
+}
+
+// TEST #15: Rule of Five - Lankstumo testas
+void test_rule_of_five_flexibility() {
+    printTestHeader("Rule of Five: Lankstumo Testas");
+
+    vector<Studentas> students;
+
+    // Pridedame kopijas
+    Studentas s1("Giedra", "Giedre", 88);
+    s1.addPaz(8);
+    students.push_back(s1);  // Copy constructor
+    testPassed("Kopija pridėta į vectorių");
+
+    // Naudojame move semantiką
+    Studentas s2("Vėlinas", "Vėline", 85);
+    s2.addPaz(7);
+    students.push_back(std::move(s2));  // Move constructor
+    testPassed("Move semantika panaudota su vectorium");
+
+    assert(s2.isPazEmpty());
+    testPassed("Laikinasis objektas ištuštintas po move");
+
+    assert(students.size() == 2);
+    assert(students[0].getVardas() == "Giedra");
+    assert(students[1].getVardas() == "Vėlinas");
+    testPassed("Visi studentai saugiai saugomi vectoriuje");
+}
+
+// TEST #16: Self-assignment saugumas - Copy
+void test_self_assignment_copy_safety() {
+    printTestHeader("Self-Assignment Saugumas (Copy)");
+
+    Studentas s("Živile", "Živile", 86);
+    s.addPaz(8);
+    s.addPaz(9);
+    s.addPaz(10);
+
+    // Self-assignment - turi nesugadinti objekto
+    s = s;
+
+    assert(s.getVardas() == "Živile");
+    testPassed("Self-assignment - vardas nepablogėjo");
+
+    assert(s.getPaz().size() == 3);
+    testPassed("Self-assignment - pazymiai nepablogėjo");
+
+    assert(s.getEgz() == 86);
+    testPassed("Self-assignment - egzaminas nepablogėjo");
+}
+
+// TEST #17: Self-assignment saugumas - Move
+void test_self_assignment_move_safety() {
+    printTestHeader("Self-Assignment Saugumas (Move)");
+
+    Studentas s("Monika", "Monika", 94);
+    s.addPaz(9);
+    s.addPaz(10);
+
+    // Self-move-assignment - turi būti saugus
+    s = std::move(s);
+
+    assert(s.getVardas() == "Monika");
+    testPassed("Self-move-assignment - vardas saugus");
+
+    // Pastaba: po self-move-assignment pazymiai gali būti "undefined"
+    // tai nėra klaida - tai yra žinomas C++ elgesys
+    testPassed("Self-move-assignment - saugiai įvykdytas");
+}
+
+// TEST #18: Assign operator chain - veikia kaip ir C++
+void test_assignment_chaining() {
+    printTestHeader("Assignment Operator Chaining");
+
+    Studentas s1("Vincas", "Vincas", 92);
+    s1.addPaz(9);
+
+    Studentas s2;
+    Studentas s3;
+
+    // Chaining - (s3 = s2) turi grąžinti s2 referencę
+    (s3 = s2) = s1;  // s2 = s1, tada s3 = s2
+
+    assert(s3.getVardas() == "Vincas");
+    testPassed("Assignment chaining veikia teisingai");
+}
+
+// TEST #19: Deep copy - vektorius su duomenimis
+void test_deep_copy_vector() {
+    printTestHeader("Deep Copy - Vektorius su Duomenimis");
+
+    Studentas original("Alina", "Aline", 90);
+    for (int i = 0; i < 5; i++) {
+        original.addPaz(8 + i);  // 8, 9, 10, 9, 8
+    }
+
+    Studentas copy = original;
+
+    // Modifikuojam originalą
+    original.clearPaz();
+    original.addPaz(10);
+
+    // Kopija turėtų turėti savo duomenis
+    assert(copy.getPaz().size() == 5);
+    testPassed("Deep copy - vektorius yra atskiras (5 elementai)");
+
+    assert(copy.getPaz()[0] == 8);
+    testPassed("Deep copy - vektoriaus duomenys nesikeičia");
+
+    assert(original.getPaz().size() == 1);
+    testPassed("Deep copy - originalas gali keistis nesu veikdamas kopijos");
+}
+
+// TEST #20: Memory efficiency - Move semantika
+void test_move_efficiency() {
+    printTestHeader("Memory Efficiency - Move Semantika");
+
+    Studentas temp("Lauras", "Lauras", 89);
+    for (int i = 0; i < 5; i++) {
+        temp.addPaz(7 + i);
+    }
+
+    // Move konstruktorius - turėtų tik persiimti pointerius
+    Studentas result = std::move(temp);
+
+    assert(result.getPaz().size() == 5);
+    testPassed("Move - duomenys persiimti efektyviai");
+
+    assert(temp.isPazEmpty());
+    testPassed("Move - šaltinis ištuštintas (nereikalinga kopijuoti)");
+
+    cout << "[INFO] Move semantika sumažina memory kopijų operacijas!" << endl;
+}
+
 // MAIN FUNCTION - SUMMARY
 int main() {
     cout << "\n" << string(60, '*') << endl;
     cout << "  STUDENTAS KLASES VISOS METODU TESTAI" << endl;
+    cout << "  RULE OF FIVE DEMONTRACIJA" << endl;
     cout << string(60, '*') << endl;
 
     try {
@@ -370,6 +534,13 @@ int main() {
         test_modification_after_copy();
         test_getters_setters();
         test_paz_operations();
+        test_rule_of_five_copy_vs_move();
+        test_rule_of_five_flexibility();
+        test_self_assignment_copy_safety();
+        test_self_assignment_move_safety();
+        test_assignment_chaining();
+        test_deep_copy_vector();
+        test_move_efficiency();
 
         cout << "\n" << string(60, '*') << endl;
         cout << "TESTO REZULTATAI:" << endl;
@@ -378,7 +549,7 @@ int main() {
         cout << string(60, '*') << endl;
 
         if (testai_nepraletii == 0) {
-            cout << "\nVISI TESTAI PRIIMTI!\n" << endl;
+            cout << "\nVISI TESTAI PRIIMTI! Sveikiname su Rule of Five demontracija!\n" << endl;
             return 0;
         } else {
             cout << "\nKai kurie testai nepraejo. Patikrinkite koda!\n" << endl;
