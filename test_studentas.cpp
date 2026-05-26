@@ -370,12 +370,12 @@ void test_rule_of_five_copy_vs_move() {
     copy1.addPaz(7);
     assert(original.getPaz().size() == 3);
     assert(copy1.getPaz().size() == 4);
-    testPassed("Copy semantika - modifikacija vienai nepaveikia kitos");
+    testPassed("Copy semantika - modifikacija nepaveikia viena kitos");
 
     // Move - originalioje turi likusti tik default reikšmės
     Studentas moved = std::move(copy2);
     assert(copy2.isPazEmpty());
-    testPassed("Move semantika - šaltinis istustintas");
+    testPassed("Move semantika - saltinis istustintas");
 
     assert(moved.getPaz().size() == 3);
     testPassed("Move semantika - tikslas turi visus duomenis");
@@ -391,28 +391,28 @@ void test_rule_of_five_flexibility() {
     Studentas s1("Giedra", "Giedre", 88);
     s1.addPaz(8);
     students.push_back(s1);  // Copy constructor
-    testPassed("Kopija pridėta į vectorių");
+    testPassed("Kopija pridėta i vektoriu");
 
     // Naudojame move semantiką
-    Studentas s2("Vėlinas", "Vėline", 85);
+    Studentas s2("Velinas", "Veline", 85);
     s2.addPaz(7);
     students.push_back(std::move(s2));  // Move constructor
-    testPassed("Move semantika panaudota su vectorium");
+    testPassed("Move semantika panaudota su vektorium");
 
     assert(s2.isPazEmpty());
-    testPassed("Laikinasis objektas ištuštintas po move");
+    testPassed("Laikinasis objektas istustintas po move");
 
     assert(students.size() == 2);
     assert(students[0].getVardas() == "Giedra");
-    assert(students[1].getVardas() == "Vėlinas");
-    testPassed("Visi studentai saugiai saugomi vectoriuje");
+    assert(students[1].getVardas() == "Velinas");
+    testPassed("Visi studentai saugiai saugomi vektoriuje");
 }
 
 // TEST #16: Self-assignment saugumas - Copy
 void test_self_assignment_copy_safety() {
     printTestHeader("Self-Assignment Saugumas (Copy)");
 
-    Studentas s("Živile", "Živile", 86);
+    Studentas s("Zivile", "Zivile", 86);
     s.addPaz(8);
     s.addPaz(9);
     s.addPaz(10);
@@ -420,14 +420,14 @@ void test_self_assignment_copy_safety() {
     // Self-assignment - turi nesugadinti objekto
     s = s;
 
-    assert(s.getVardas() == "Živile");
-    testPassed("Self-assignment - vardas nepablogėjo");
+    assert(s.getVardas() == "Zivile");
+    testPassed("Self-assignment - vardas nepablogejo");
 
     assert(s.getPaz().size() == 3);
-    testPassed("Self-assignment - pazymiai nepablogėjo");
+    testPassed("Self-assignment - pazymiai nepablogejo");
 
     assert(s.getEgz() == 86);
-    testPassed("Self-assignment - egzaminas nepablogėjo");
+    testPassed("Self-assignment - egzaminas nepablogejo");
 }
 
 // TEST #17: Self-assignment saugumas - Move
@@ -446,7 +446,7 @@ void test_self_assignment_move_safety() {
 
     // Pastaba: po self-move-assignment pazymiai gali būti "undefined"
     // tai nėra klaida - tai yra žinomas C++ elgesys
-    testPassed("Self-move-assignment - saugiai įvykdytas");
+    testPassed("Self-move-assignment - saugiai ivykdytas");
 }
 
 // TEST #18: Assign operator chain - veikia kaip ir C++
@@ -486,7 +486,7 @@ void test_deep_copy_vector() {
     testPassed("Deep copy - vektorius yra atskiras (5 elementai)");
 
     assert(copy.getPaz()[0] == 8);
-    testPassed("Deep copy - vektoriaus duomenys nesikeičia");
+    testPassed("Deep copy - vektoriaus duomenys nesikeicia");
 
     assert(original.getPaz().size() == 1);
     testPassed("Deep copy - originalas gali keistis nesu veikdamas kopijos");
@@ -501,16 +501,16 @@ void test_move_efficiency() {
         temp.addPaz(7 + i);
     }
 
-    // Move konstruktorius - turėtų tik persiimti pointerius
+    // Move konstruktorius - turėtų tik perimti pointerius
     Studentas result = std::move(temp);
 
     assert(result.getPaz().size() == 5);
-    testPassed("Move - duomenys persiimti efektyviai");
+    testPassed("Move - duomenys perimti efektyviai");
 
     assert(temp.isPazEmpty());
-    testPassed("Move - šaltinis ištuštintas (nereikalinga kopijuoti)");
+    testPassed("Move - saltinis istustintas (nereikalinga kopijuoti)");
 
-    cout << "[INFO] Move semantika sumažina memory kopijų operacijas!" << endl;
+    cout << "[INFO] Move semantika sumazina memory kopijų operacijas!" << endl;
 }
 
 // MAIN FUNCTION - SUMMARY
@@ -549,7 +549,7 @@ int main() {
         cout << string(60, '*') << endl;
 
         if (testai_nepraletii == 0) {
-            cout << "\nVISI TESTAI PRIIMTI! Sveikiname su Rule of Five demontracija!\n" << endl;
+            cout << "\nVISI TESTAI PRIIMTI!\n" << endl;
             return 0;
         } else {
             cout << "\nKai kurie testai nepraejo. Patikrinkite koda!\n" << endl;
