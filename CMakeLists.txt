@@ -33,10 +33,15 @@ set(SOURCES
 # Sukuriame ezkekutuojamąjį (executable) failą
 add_executable(programa ${SOURCES})
 
-# Testų programa
+# ===== TESTŲ PROGRAMA =====
+# Testų programa su visuomeninio testavimo palaikymą
 add_executable(test_programa 
     test_studentas.cpp 
     extra_cpp/Zmogus.cpp
     extra_cpp/Studentas.cpp 
     extra_cpp/mat_funkcijos.cpp
 )
+
+# Nustatome test_programa ketinamą jį vykdyti kaip testą (CTest)
+enable_testing()
+add_test(NAME StudentasTests COMMAND test_programa)
