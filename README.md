@@ -2,11 +2,11 @@
 
 ### Apžvalga
 
-v1.5 versijoje projektas perrašytas su objektinio programavimo paveldėjimo principais. Sukurta abstrakti bazinė klasė `Žmogus`, iš kurios paveldi `Studentas` klasė. Žmogus klasė yra abstrakti - jos objektų kurti negalima, tik iš jos išvestinių klasių.
+v1.5 versijoje projektas perrašytas su objektinio programavimo paveldėjimo principais. Sukurta abstrakti bazinė klasė `Žmogus`, iš kurios paveldima `Studentas` klasė. Žmogus klasė yra abstrakti - jos objektų kurti negalima, tik iš jos išvestinių klasių.
 
 ### Klasių Hierarchija
 
-Bazinė abstrakti klasė `Žmogus` saugo bendrus žmogaus atributus (vardas, pavardė) ir apibrėžia abstraktus metodus `getInfo()` ir `paskaiciuoti()`. Iš jos paveldi `Studentas` klasė, kuri implementuoja šiuos abstraktus metodus ir prideda savus duomenis (pažymiai, egzaminas, galutinius rezultatus).
+Bazinė abstrakti klasė `Žmogus` saugo bendrus žmogaus atributus (vardas, pavardė) ir apibrėžia abstrakčius metodus `getInfo()` ir `paskaiciuoti()`. Iš jos paveldi `Studentas` klasė, kuri implementuoja šiuos abstrakčius metodus ir prideda savus duomenis (pažymiai, egzaminas, galutinius rezultatus).
 
 ### Abstrakti Klasė Žmogus
 
@@ -20,11 +20,11 @@ Bazinė abstrakti klasė `Žmogus` saugo bendrus žmogaus atributus (vardas, pav
 
 ### Studentas Klasė (Išvestinė iš Žmogus)
 
-`Studentas` yra išvestinė klasė, kuri paveldi iš `Žmogus`. Ji implementuoja abstraktus metodus ir prideda savus duomenis bei funkcionalumą.
+`Studentas` yra išvestinė klasė, kuri paveldi iš `Žmogus`. Ji implementuoja abstrakčius metodus ir prideda savus duomenis bei funkcionalumą.
 
 | Metodas | Tikslas | Statusas |
 |---------|---------|----------|
-| **Destruktorius** | Atlaisvinusios išteklius | Implementuotas |
+| **Destruktorius** | Atlaisvina išteklius | Implementuotas |
 | **Copy konstruktorius** | Kuria objekto kopiją (deep copy) | Implementuotas |
 | **Copy assignment** | Priskyrimo operatorius kopijuoti | Implementuotas |
 | **Move konstruktorius** | Perima išteklius iš laikino objekto | Implementuotas |
@@ -43,9 +43,9 @@ Bazinė abstrakti klasė `Žmogus` saugo bendrus žmogaus atributus (vardas, pav
 
 | Opciją | Veikimas |
 |--------|----------|
-| 1 | Rankinė ivedis (vardas, pavardė, 5 pažymiai, egzaminas) |
+| 1 | Rankininis įvedimas (vardas, pavardė, 5 pažymiai, egzaminas) |
 | 2 | Generuoti tik pažymius |
-| 3 | Generuoti visus duomenis automatiskai |
+| 3 | Generuoti visus duomenis automatiškai |
 | 4 | Nuskaityti iš failo |
 | 5 | Sukurti testavimo failus |
 | 6 | Atlikti spartos analizę |
@@ -61,7 +61,7 @@ Bazinė abstrakti klasė `Žmogus` saugo bendrus žmogaus atributus (vardas, pav
 | **Žmogaus savybės** | Tiesiai Studentas klasėje | Perkeltos į Žmogus bazę |
 | **Rule of Five** | Implementuota | Išlaikyta |
 | **I/O operatoriai** | Yra | Išlaikyti |
-| **Veikimo logika** | Tokia pati | Identiska |
+| **Veikimo logika** | Tokia pati | Identiška |
 | **Testai** | Veikia | Visi veikia nepakeisti |
 
 ### Testai (iš v1.2, visi veikia v1.5)
@@ -81,7 +81,7 @@ Visi v1.2 versijoje parašyti testai veikia ir v1.5 versijoje be jokių pakeitim
 
 Programos logika išlieka ta pati kaip v1.2:
 
-1. Vartotojas pasirenka iš meniu (rankinė ivedis, automatinė, iš failo, etc.)
+1. Vartotojas pasirenka iš meniu (rankinis įvedimas, automatinė, iš failo, etc.)
 2. Nuskaito arba generuoja studentų duomenis
 3. Skaičiuoja galutinius rezultatus (vidurkis ir mediana)
 4. Rūšiuoja studentus pagal vardą, pavardę arba rezultatą
