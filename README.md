@@ -400,10 +400,15 @@ Jei kyla klausimų:
 **GitHub:** https://github.com/ditassimoliunas-prog/objektuzdv1
 
 ---
+Assert Rule of five testai:
 
 <img width="424" height="722" alt="Screenshot 2026-05-24 171304" src="https://github.com/user-attachments/assets/378556d4-baec-41be-ba2b-20b1401cf511" />
 <img width="835" height="689" alt="Screenshot 2026-05-24 171330" src="https://github.com/user-attachments/assets/8f343a65-4895-40bf-aa0c-5da988354cf1" />
 <img width="459" height="383" alt="Screenshot 2026-05-24 171440" src="https://github.com/user-attachments/assets/452b239b-0c8e-47ff-bfcb-115a8902081d" />
+
+Google.test testai:
+
+<img width="560" height="484" alt="image" src="https://github.com/user-attachments/assets/dc899571-b8e1-4d06-9222-77ec201fe551" />
 
 
 
