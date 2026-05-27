@@ -1,0 +1,93 @@
+\doxysection{output.\+cpp}
+\hypertarget{output_8cpp_source}{}\label{output_8cpp_source}\index{extra\_cpp/output.cpp@{extra\_cpp/output.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <iomanip>}}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <limits>}}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}../header\_files/output.h"{}}}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00009}00009\ \textcolor{keyword}{using\ }std::cin;}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00010}00010\ \textcolor{keyword}{using\ }std::cout;}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00011}00011\ \textcolor{keyword}{using\ }std::string;}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00012}00012\ \textcolor{keyword}{using\ }std::vector;}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00013}00013\ \textcolor{keyword}{using\ }std::left;}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00014}00014\ \textcolor{keyword}{using\ }std::right;}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00015}00015\ \textcolor{keyword}{using\ }std::setw;}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00016}00016\ \textcolor{keyword}{using\ }std::setprecision;}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00017}00017\ \textcolor{keyword}{using\ }std::sort;}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00018}00018\ \textcolor{keyword}{using\ }std::fixed;}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00019}00019\ \textcolor{keyword}{using\ }std::numeric\_limits;}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00020}00020\ \textcolor{keyword}{using\ }std::streamsize;}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00021}00021\ \textcolor{keyword}{using\ }std::chrono::high\_resolution\_clock;}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00022}00022\ \textcolor{keyword}{using\ }std::chrono::duration;}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00024}00024\ \textcolor{keywordtype}{void}\ outputas(vector<Studentas>\&\ grupe)\ \{}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00025}00025\ \ \ \ \ \textcolor{keywordflow}{if}\ (grupe.empty())\ \{}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Nera\ studentu\ duomenu!\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00028}00028\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00030}00030\ \ \ \ \ \textcolor{comment}{//\ Klausiame\ kaip\ rusiuoti}}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00031}00031\ \ \ \ \ cout\ <<\ string(80,\ \textcolor{charliteral}{'-\/'})\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00032}00032\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Pasirinkite\ rusiavimo\ buda:\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00033}00033\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}1.\ Pagal\ varda\ (A-\/Z)\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00034}00034\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}2.\ Pagal\ pavarde\ (A-\/Z)\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00035}00035\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}3.\ Pagal\ galutini\ bala\ (vidurki)\ -\/\ didejimo\ tvarka\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00036}00036\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}4.\ Pagal\ galutini\ bala\ (mediana)\ -\/\ didejimo\ tvarka\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00038}00038\ \ \ \ \ \textcolor{keywordtype}{int}\ pasirinkimas;}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00039}00039\ \ \ \ \ \textcolor{keywordflow}{while}\ (!(cin\ >>\ pasirinkimas)\ ||\ pasirinkimas\ <\ 1\ ||\ pasirinkimas\ >\ 4)\ \{}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Klaida!\ Iveskite\ skaiciu\ nuo\ 1\ iki\ 4:\ "{}};}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ cin.clear();}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ cin.ignore(numeric\_limits<streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00043}00043\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00045}00045\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Pasirinktas\ rusiavimas:\ "{}}\ <<\ pasirinkimas\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00047}00047\ \ \ \ \ \textcolor{comment}{//\ Pradedamas\ rusiavimo\ laiko\ matavimas}}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00048}00048\ \ \ \ \ \textcolor{keyword}{auto}\ pradzia\ =\ high\_resolution\_clock::now();}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00050}00050\ \ \ \ \ \textcolor{comment}{//\ Rusiuojama\ pagal\ pasirinkima}}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00051}00051\ \ \ \ \ \textcolor{keywordflow}{switch}\ (pasirinkimas)\ \{}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00052}00052\ \ \ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ sort(grupe.begin(),\ grupe.end(),\ comparePagalVarda);}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00055}00055\ \ \ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ sort(grupe.begin(),\ grupe.end(),\ comparePagalPavarde);}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00058}00058\ \ \ \ \ \textcolor{keywordflow}{case}\ 3:}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ sort(grupe.begin(),\ grupe.end(),\ comparePagalReza);}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00061}00061\ \ \ \ \ \textcolor{keywordflow}{case}\ 4:}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ sort(grupe.begin(),\ grupe.end(),\ comparePagalMeda);}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00064}00064\ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Klaida!\ Neteisingas\ pasirinkimas.\ Rodoma\ be\ rusiavimo.\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00067}00067\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00069}00069\ \ \ \ \ \textcolor{comment}{//\ Baigiamas\ rusiavimo\ laiko\ matavimas}}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00070}00070\ \ \ \ \ \textcolor{keyword}{auto}\ pabaiga\ =\ high\_resolution\_clock::now();}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00071}00071\ \ \ \ \ duration<double>\ trukme\ =\ pabaiga\ -\/\ pradzia;}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00073}00073\ \ \ \ \ \textcolor{comment}{//\ Antrastes\ eilute}}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00074}00074\ \ \ \ \ cout\ <<\ string(80,\ \textcolor{charliteral}{'-\/'})\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00075}00075\ \ \ \ \ cout\ <<\ left\ <<\ setw(20)\ <<\ \textcolor{stringliteral}{"{}Vardas"{}}\ <<\ setw(20)\ <<\ \textcolor{stringliteral}{"{}Pavarde"{}}}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ <<\ setw(20)\ <<\ \textcolor{stringliteral}{"{}Galutinis\ (Vid.)"{}}\ <<\ setw(20)\ <<\ \textcolor{stringliteral}{"{}Galutinis\ (Med.)\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00078}00078\ \ \ \ \ \textcolor{comment}{//\ Studentu\ duomenys}}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00079}00079\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ A\ :\ grupe)\ \{}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ cout\ <<\ left\ <<\ setw(20)\ <<\ A.getVardas()\ <<\ setw(20)\ <<\ A.getPavarde()}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ setw(20)\ <<\ fixed\ <<\ setprecision(2)\ <<\ A.getRez()}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ setw(20)\ <<\ fixed\ <<\ setprecision(2)\ <<\ A.getMed()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00083}00083\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00085}00085\ \ \ \ \ cout\ <<\ string(80,\ \textcolor{charliteral}{'-\/'})\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00086}00086\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Ivykdymo\ laikas:\ "{}}\ <<\ fixed\ <<\ setprecision(7)\ <<\ trukme.count()\ <<\ \textcolor{stringliteral}{"{}\ s\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{output_8cpp_source_l00087}00087\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,173 @@
+\begin{theindex}
+
+  \item {\texorpdfstring{$\sim$}{\string~}Studentas}
+    \subitem {Studentas}, \hyperpage{16}
+  \item {\texorpdfstring{$\sim$}{\string~}Zmogus}
+    \subitem {Zmogus}, \hyperpage{22}
+
+  \indexspace
+
+  \item {addPaz}
+    \subitem {Studentas}, \hyperpage{17}
+
+  \indexspace
+
+  \item {clearPaz}
+    \subitem {Studentas}, \hyperpage{17}
+
+  \indexspace
+
+  \item {deque$<$ T $>$}, \hyperpage{9}
+  \item {deque$<$ T $>$::const\_iterator}, \hyperpage{7}
+  \item {deque$<$ T $>$::const\_reverse\_iterator}, \hyperpage{8}
+  \item {deque$<$ T $>$::iterator}, \hyperpage{10}
+  \item {deque$<$ T $>$::reverse\_iterator}, \hyperpage{13}
+
+  \indexspace
+
+  \item {exception}, \hyperpage{9}
+  \item {extra\_cpp/duomenu\_valdymas.cpp}, \hyperpage{25}
+  \item {extra\_cpp/input.cpp}, \hyperpage{30}
+  \item {extra\_cpp/mat\_funkcijos.cpp}, \hyperpage{31}
+  \item {extra\_cpp/menu.cpp}, \hyperpage{32}
+  \item {extra\_cpp/output.cpp}, \hyperpage{33}
+  \item {extra\_cpp/Studentas.cpp}, \hyperpage{34}
+  \item {extra\_cpp/testavimas.cpp}, \hyperpage{36}
+  \item {extra\_cpp/Zmogus.cpp}, \hyperpage{41}
+
+  \indexspace
+
+  \item {getEgz}
+    \subitem {Studentas}, \hyperpage{17}
+  \item {getInfo}
+    \subitem {Studentas}, \hyperpage{17}
+    \subitem {Zmogus}, \hyperpage{22}
+  \item {getMed}
+    \subitem {Studentas}, \hyperpage{17}
+  \item {getPavarde}
+    \subitem {Zmogus}, \hyperpage{22}
+  \item {getPaz}
+    \subitem {Studentas}, \hyperpage{17}
+  \item {getRez}
+    \subitem {Studentas}, \hyperpage{18}
+  \item {getVardas}
+    \subitem {Zmogus}, \hyperpage{23}
+
+  \indexspace
+
+  \item {header\_files/duomenu\_valdymas.h}, \hyperpage{41}
+  \item {header\_files/input.h}, \hyperpage{41}
+  \item {header\_files/Mat\_funkcijos.h}, \hyperpage{42}
+  \item {header\_files/menu.h}, \hyperpage{42}
+  \item {header\_files/output.h}, \hyperpage{42}
+  \item {header\_files/Studentas.h}, \hyperpage{42}
+  \item {header\_files/testavimas.h}, \hyperpage{43}
+  \item {header\_files/Zmogus.h}, \hyperpage{43}
+
+  \indexspace
+
+  \item {ifstream}, \hyperpage{10}
+  \item {invalid\_argument}, \hyperpage{10}
+  \item {isPazEmpty}
+    \subitem {Studentas}, \hyperpage{18}
+  \item {istream}, \hyperpage{10}
+
+  \indexspace
+
+  \item {list$<$ T $>$}, \hyperpage{11}
+  \item {list$<$ T $>$::const\_iterator}, \hyperpage{7}
+  \item {list$<$ T $>$::const\_reverse\_iterator}, \hyperpage{8}
+  \item {list$<$ T $>$::iterator}, \hyperpage{11}
+  \item {list$<$ T $>$::reverse\_iterator}, \hyperpage{13}
+
+  \indexspace
+
+  \item {ofstream}, \hyperpage{12}
+  \item {operator$<$$<$}
+    \subitem {Studentas}, \hyperpage{19}
+    \subitem {Zmogus}, \hyperpage{24}
+  \item {operator$>$$>$}
+    \subitem {Studentas}, \hyperpage{19}
+  \item {operator=}
+    \subitem {Studentas}, \hyperpage{18}
+  \item {ostream}, \hyperpage{12}
+
+  \indexspace
+
+  \item {pavarde\_}
+    \subitem {Zmogus}, \hyperpage{24}
+
+  \indexspace
+
+  \item {readStudent}
+    \subitem {Studentas}, \hyperpage{18}
+  \item {reservePaz}
+    \subitem {Studentas}, \hyperpage{18}
+  \item {runtime\_error}, \hyperpage{14}
+
+  \indexspace
+
+  \item {setEgz}
+    \subitem {Studentas}, \hyperpage{18}
+  \item {setMed}
+    \subitem {Studentas}, \hyperpage{19}
+  \item {setPavarde}
+    \subitem {Zmogus}, \hyperpage{23}
+  \item {setPaz}
+    \subitem {Studentas}, \hyperpage{19}
+  \item {setRez}
+    \subitem {Studentas}, \hyperpage{19}
+  \item {setVardas}
+    \subitem {Zmogus}, \hyperpage{23}
+  \item {string}, \hyperpage{14}
+  \item {string::const\_iterator}, \hyperpage{7}
+  \item {string::const\_reverse\_iterator}, \hyperpage{8}
+  \item {string::iterator}, \hyperpage{11}
+  \item {string::reverse\_iterator}, \hyperpage{13}
+  \item {Studentas}, \hyperpage{14}
+    \subitem {\texorpdfstring{$\sim$}{\string~}Studentas}, 
+		\hyperpage{16}
+    \subitem {addPaz}, \hyperpage{17}
+    \subitem {clearPaz}, \hyperpage{17}
+    \subitem {getEgz}, \hyperpage{17}
+    \subitem {getInfo}, \hyperpage{17}
+    \subitem {getMed}, \hyperpage{17}
+    \subitem {getPaz}, \hyperpage{17}
+    \subitem {getRez}, \hyperpage{18}
+    \subitem {isPazEmpty}, \hyperpage{18}
+    \subitem {operator$<$$<$}, \hyperpage{19}
+    \subitem {operator$>$$>$}, \hyperpage{19}
+    \subitem {operator=}, \hyperpage{18}
+    \subitem {readStudent}, \hyperpage{18}
+    \subitem {reservePaz}, \hyperpage{18}
+    \subitem {setEgz}, \hyperpage{18}
+    \subitem {setMed}, \hyperpage{19}
+    \subitem {setPaz}, \hyperpage{19}
+    \subitem {setRez}, \hyperpage{19}
+    \subitem {Studentas}, \hyperpage{16}
+
+  \indexspace
+
+  \item {vardas\_}
+    \subitem {Zmogus}, \hyperpage{24}
+  \item {vector$<$ T $>$}, \hyperpage{20}
+  \item {vector$<$ T $>$::const\_iterator}, \hyperpage{8}
+  \item {vector$<$ T $>$::const\_reverse\_iterator}, \hyperpage{9}
+  \item {vector$<$ T $>$::iterator}, \hyperpage{11}
+  \item {vector$<$ T $>$::reverse\_iterator}, \hyperpage{13}
+
+  \indexspace
+
+  \item {Zmogus}, \hyperpage{20}
+    \subitem {\texorpdfstring{$\sim$}{\string~}Zmogus}, \hyperpage{22}
+    \subitem {getInfo}, \hyperpage{22}
+    \subitem {getPavarde}, \hyperpage{22}
+    \subitem {getVardas}, \hyperpage{23}
+    \subitem {operator$<$$<$}, \hyperpage{24}
+    \subitem {pavarde\_}, \hyperpage{24}
+    \subitem {setPavarde}, \hyperpage{23}
+    \subitem {setVardas}, \hyperpage{23}
+    \subitem {vardas\_}, \hyperpage{24}
+    \subitem {Zmogus}, \hyperpage{22}
+
+\end{theindex}
