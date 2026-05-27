@@ -133,6 +133,10 @@
     <class kind="class">string::const_reverse_iterator</class>
   </compound>
   <compound kind="class">
+    <name>stringstream</name>
+    <filename>classstringstream.html</filename>
+  </compound>
+  <compound kind="class">
     <name>Studentas</name>
     <filename>class_studentas.html</filename>
     <base>Zmogus</base>

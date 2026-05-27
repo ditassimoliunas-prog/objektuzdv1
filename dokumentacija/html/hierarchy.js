@@ -26,6 +26,7 @@ var hierarchy =
     [ "vector&lt; T &gt;::reverse_iterator", "classvector_1_1reverse__iterator.html", null ],
     [ "runtime_error", "classruntime__error.html", null ],
     [ "string", "classstring.html", null ],
+    [ "stringstream", "classstringstream.html", null ],
     [ "vector&lt; T &gt;", "classvector.html", null ],
     [ "Zmogus", "class_zmogus.html", [
       [ "Studentas", "class_studentas.html", null ]

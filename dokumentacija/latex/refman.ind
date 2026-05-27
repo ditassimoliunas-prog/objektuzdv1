@@ -47,7 +47,7 @@
   \item {getPavarde}
     \subitem {Zmogus}, \hyperpage{22}
   \item {getPaz}
-    \subitem {Studentas}, \hyperpage{17}
+    \subitem {Studentas}, \hyperpage{18}
   \item {getRez}
     \subitem {Studentas}, \hyperpage{18}
   \item {getVardas}
@@ -102,13 +102,13 @@
   \item {readStudent}
     \subitem {Studentas}, \hyperpage{18}
   \item {reservePaz}
-    \subitem {Studentas}, \hyperpage{18}
+    \subitem {Studentas}, \hyperpage{19}
   \item {runtime\_error}, \hyperpage{14}
 
   \indexspace
 
   \item {setEgz}
-    \subitem {Studentas}, \hyperpage{18}
+    \subitem {Studentas}, \hyperpage{19}
   \item {setMed}
     \subitem {Studentas}, \hyperpage{19}
   \item {setPavarde}
@@ -124,7 +124,8 @@
   \item {string::const\_reverse\_iterator}, \hyperpage{8}
   \item {string::iterator}, \hyperpage{11}
   \item {string::reverse\_iterator}, \hyperpage{13}
-  \item {Studentas}, \hyperpage{14}
+  \item {stringstream}, \hyperpage{14}
+  \item {Studentas}, \hyperpage{15}
     \subitem {\texorpdfstring{$\sim$}{\string~}Studentas}, 
 		\hyperpage{16}
     \subitem {addPaz}, \hyperpage{17}
@@ -132,19 +133,19 @@
     \subitem {getEgz}, \hyperpage{17}
     \subitem {getInfo}, \hyperpage{17}
     \subitem {getMed}, \hyperpage{17}
-    \subitem {getPaz}, \hyperpage{17}
+    \subitem {getPaz}, \hyperpage{18}
     \subitem {getRez}, \hyperpage{18}
     \subitem {isPazEmpty}, \hyperpage{18}
     \subitem {operator$<$$<$}, \hyperpage{19}
     \subitem {operator$>$$>$}, \hyperpage{19}
     \subitem {operator=}, \hyperpage{18}
     \subitem {readStudent}, \hyperpage{18}
-    \subitem {reservePaz}, \hyperpage{18}
-    \subitem {setEgz}, \hyperpage{18}
+    \subitem {reservePaz}, \hyperpage{19}
+    \subitem {setEgz}, \hyperpage{19}
     \subitem {setMed}, \hyperpage{19}
     \subitem {setPaz}, \hyperpage{19}
     \subitem {setRez}, \hyperpage{19}
-    \subitem {Studentas}, \hyperpage{16}
+    \subitem {Studentas}, \hyperpage{16, 17}
 
   \indexspace
 

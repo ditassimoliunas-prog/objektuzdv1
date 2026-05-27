@@ -38,7 +38,7 @@ WARN_IF_DOC_EMPTY      = NO
 WARN_NO_PARAMDOC       = NO
 WARN_AS_ERROR          = NO
 
-INPUT                  = header_files extra_cpp
+INPUT                  = header_files extra_cpp test_studentas.cpp objekt1uzd.cpp
 
 INPUT_ENCODING         = UTF-8
 

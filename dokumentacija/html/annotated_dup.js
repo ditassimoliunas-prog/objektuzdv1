@@ -10,6 +10,7 @@ var annotated_dup =
     [ "ostream", "classostream.html", null ],
     [ "runtime_error", "classruntime__error.html", null ],
     [ "string", "classstring.html", "classstring" ],
+    [ "stringstream", "classstringstream.html", null ],
     [ "Studentas", "class_studentas.html", "class_studentas" ],
     [ "vector", "classvector.html", "classvector" ],
     [ "Zmogus", "class_zmogus.html", "class_zmogus" ]

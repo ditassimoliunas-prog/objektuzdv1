@@ -24,7 +24,8 @@
 \indexentry{vector$<$ T $>$::reverse\_iterator@{vector$<$ T $>$::reverse\_iterator}|hyperpage}{13}
 \indexentry{runtime\_error@{runtime\_error}|hyperpage}{14}
 \indexentry{string@{string}|hyperpage}{14}
-\indexentry{Studentas@{Studentas}|hyperpage}{14}
+\indexentry{stringstream@{stringstream}|hyperpage}{14}
+\indexentry{Studentas@{Studentas}|hyperpage}{15}
 \indexentry{Studentas@{Studentas}!Studentas@{Studentas}|hyperpage}{16}
 \indexentry{Studentas@{Studentas}!Studentas@{Studentas}|hyperpage}{16}
 \indexentry{Studentas@{Studentas}!Studentas@{Studentas}|hyperpage}{16}
@@ -35,8 +36,8 @@
 \indexentry{````~Studentas@{\texorpdfstring{$\sim$}{\string~}Studentas}!Studentas@{Studentas}|hyperpage}{16}
 \indexentry{Studentas@{Studentas}!Studentas@{Studentas}|hyperpage}{16}
 \indexentry{Studentas@{Studentas}!Studentas@{Studentas}|hyperpage}{16}
-\indexentry{Studentas@{Studentas}!Studentas@{Studentas}|hyperpage}{16}
-\indexentry{Studentas@{Studentas}!Studentas@{Studentas}|hyperpage}{16}
+\indexentry{Studentas@{Studentas}!Studentas@{Studentas}|hyperpage}{17}
+\indexentry{Studentas@{Studentas}!Studentas@{Studentas}|hyperpage}{17}
 \indexentry{Studentas@{Studentas}!addPaz@{addPaz}|hyperpage}{17}
 \indexentry{addPaz@{addPaz}!Studentas@{Studentas}|hyperpage}{17}
 \indexentry{Studentas@{Studentas}!clearPaz@{clearPaz}|hyperpage}{17}
@@ -47,10 +48,10 @@
 \indexentry{getInfo@{getInfo}!Studentas@{Studentas}|hyperpage}{17}
 \indexentry{Studentas@{Studentas}!getMed@{getMed}|hyperpage}{17}
 \indexentry{getMed@{getMed}!Studentas@{Studentas}|hyperpage}{17}
-\indexentry{Studentas@{Studentas}!getPaz@{getPaz}|hyperpage}{17}
-\indexentry{getPaz@{getPaz}!Studentas@{Studentas}|hyperpage}{17}
-\indexentry{Studentas@{Studentas}!getPaz@{getPaz}|hyperpage}{17}
-\indexentry{getPaz@{getPaz}!Studentas@{Studentas}|hyperpage}{17}
+\indexentry{Studentas@{Studentas}!getPaz@{getPaz}|hyperpage}{18}
+\indexentry{getPaz@{getPaz}!Studentas@{Studentas}|hyperpage}{18}
+\indexentry{Studentas@{Studentas}!getPaz@{getPaz}|hyperpage}{18}
+\indexentry{getPaz@{getPaz}!Studentas@{Studentas}|hyperpage}{18}
 \indexentry{Studentas@{Studentas}!getRez@{getRez}|hyperpage}{18}
 \indexentry{getRez@{getRez}!Studentas@{Studentas}|hyperpage}{18}
 \indexentry{Studentas@{Studentas}!isPazEmpty@{isPazEmpty}|hyperpage}{18}
@@ -61,10 +62,10 @@
 \indexentry{operator=@{operator=}!Studentas@{Studentas}|hyperpage}{18}
 \indexentry{Studentas@{Studentas}!readStudent@{readStudent}|hyperpage}{18}
 \indexentry{readStudent@{readStudent}!Studentas@{Studentas}|hyperpage}{18}
-\indexentry{Studentas@{Studentas}!reservePaz@{reservePaz}|hyperpage}{18}
-\indexentry{reservePaz@{reservePaz}!Studentas@{Studentas}|hyperpage}{18}
-\indexentry{Studentas@{Studentas}!setEgz@{setEgz}|hyperpage}{18}
-\indexentry{setEgz@{setEgz}!Studentas@{Studentas}|hyperpage}{18}
+\indexentry{Studentas@{Studentas}!reservePaz@{reservePaz}|hyperpage}{19}
+\indexentry{reservePaz@{reservePaz}!Studentas@{Studentas}|hyperpage}{19}
+\indexentry{Studentas@{Studentas}!setEgz@{setEgz}|hyperpage}{19}
+\indexentry{setEgz@{setEgz}!Studentas@{Studentas}|hyperpage}{19}
 \indexentry{Studentas@{Studentas}!setMed@{setMed}|hyperpage}{19}
 \indexentry{setMed@{setMed}!Studentas@{Studentas}|hyperpage}{19}
 \indexentry{Studentas@{Studentas}!setPaz@{setPaz}|hyperpage}{19}
