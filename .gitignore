@@ -385,7 +385,7 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 
 # Doxygen
-# dokumentacija/  # v2.0: dokumentacija TURI būti commitinta!
+dokumentacija/
 doxygen_warnings.log
 
 # CMake build directories (nereikalingi commit)

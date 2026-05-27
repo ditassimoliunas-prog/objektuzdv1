@@ -372,7 +372,7 @@ void test_rule_of_five_copy_vs_move() {
     assert(copy1.getPaz().size() == 4);
     testPassed("Copy semantika - modifikacija nepaveikia viena kitos");
 
-    // Move - originalioje turi likusti tik default reikšmės
+    // Move - originalioje turi likusti tik default reiksmes
     Studentas moved = std::move(copy2);
     assert(copy2.isPazEmpty());
     testPassed("Move semantika - saltinis istustintas");
@@ -391,9 +391,9 @@ void test_rule_of_five_flexibility() {
     Studentas s1("Giedra", "Giedre", 88);
     s1.addPaz(8);
     students.push_back(s1);  // Copy constructor
-    testPassed("Kopija pridėta i vektoriu");
+    testPassed("Kopija prideta i vektoriu");
 
-    // Naudojame move semantiką
+    // Naudojame move semantika
     Studentas s2("Velinas", "Veline", 85);
     s2.addPaz(7);
     students.push_back(std::move(s2));  // Move constructor
@@ -438,14 +438,14 @@ void test_self_assignment_move_safety() {
     s.addPaz(9);
     s.addPaz(10);
 
-    // Self-move-assignment - turi būti saugus
+    // Self-move-assignment - turi buti saugus
     s = std::move(s);
 
     assert(s.getVardas() == "Monika");
     testPassed("Self-move-assignment - vardas saugus");
 
-    // Pastaba: po self-move-assignment pazymiai gali būti "undefined"
-    // tai nėra klaida - tai yra žinomas C++ elgesys
+    // Pastaba: po self-move-assignment pazymiai gali buti "undefined"
+    // tai nera klaida - tai yra zinomas C++ elgesys
     testPassed("Self-move-assignment - saugiai ivykdytas");
 }
 
@@ -459,7 +459,7 @@ void test_assignment_chaining() {
     Studentas s2;
     Studentas s3;
 
-    // Chaining - (s3 = s2) turi grąžinti s2 referencę
+    // Chaining - (s3 = s2) turi grazinti s2 referenc
     (s3 = s2) = s1;  // s2 = s1, tada s3 = s2
 
     assert(s3.getVardas() == "Vincas");
@@ -477,11 +477,11 @@ void test_deep_copy_vector() {
 
     Studentas copy = original;
 
-    // Modifikuojam originalą
+    // Modifikuojam originala
     original.clearPaz();
     original.addPaz(10);
 
-    // Kopija turėtų turėti savo duomenis
+    // Kopija turetu tureti savo duomenis
     assert(copy.getPaz().size() == 5);
     testPassed("Deep copy - vektorius yra atskiras (5 elementai)");
 
@@ -501,7 +501,7 @@ void test_move_efficiency() {
         temp.addPaz(7 + i);
     }
 
-    // Move konstruktorius - turėtų tik perimti pointerius
+    // Move konstruktorius - turetu tik perimti pointerius
     Studentas result = std::move(temp);
 
     assert(result.getPaz().size() == 5);
@@ -510,7 +510,7 @@ void test_move_efficiency() {
     assert(temp.isPazEmpty());
     testPassed("Move - saltinis istustintas (nereikalinga kopijuoti)");
 
-    cout << "[INFO] Move semantika sumazina memory kopijų operacijas!" << endl;
+    cout << "[INFO] Move semantika sumazina memory kopiju operacijas!" << endl;
 }
 
 // MAIN FUNCTION - SUMMARY

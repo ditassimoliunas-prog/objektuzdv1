@@ -1,113 +1,6 @@
-## v1.5 relisas: Abstrakti Klasė Žmogus ir Paveldėjimas
-
-### Apžvalga
-
-v1.5 versijoje projektas perrašytas su objektinio programavimo paveldėjimo principais. Sukurta abstrakti bazinė klasė `Žmogus`, iš kurios paveldima `Studentas` klasė. Žmogus klasė yra abstrakti - jos objektų kurti negalima, tik iš jos išvestinių klasių.
-
-### Klasių Hierarchija
-
-Bazinė abstrakti klasė `Žmogus` saugo bendrus žmogaus atributus (vardas, pavardė) ir apibrėžia abstrakčius metodus `getInfo()` ir `paskaiciuoti()`. Iš jos paveldi `Studentas` klasė, kuri implementuoja šiuos abstrakčius metodus ir prideda savus duomenis (pažymiai, egzaminas, galutinius rezultatus).
-
-### Abstrakti Klasė Žmogus
-
-| Funkcionalumas | Aprašas |
-|----------------|---------|
-| **Bazinės savybės** | vardas_, pavarde_ (protected - prieinamos tik išvestinėms klasėms) |
-| **Virtualus destruktorius** | Reikalingas tinkamam polimorfizmui |
-| **Abstraktūs metodai** | getInfo(), paskaiciuoti() - turi būti implementuoti išvestinėse klasėse |
-| **Getters/Setters** | getVardas(), getPavarde(), setVardas(), setPavarde() |
-| **Objektų kūrimas** | **NEGALIMA** kurti Žmogus objektų tiesiai |
-
-### Studentas Klasė (Išvestinė iš Žmogus)
-
-`Studentas` yra išvestinė klasė, kuri paveldi iš `Žmogus`. Ji implementuoja abstrakčius metodus ir prideda savus duomenis bei funkcionalumą.
-
-| Metodas | Tikslas | Statusas |
-|---------|---------|----------|
-| **Destruktorius** | Atlaisvina išteklius | Implementuotas |
-| **Copy konstruktorius** | Kuria objekto kopiją (deep copy) | Implementuotas |
-| **Copy assignment** | Priskyrimo operatorius kopijuoti | Implementuotas |
-| **Move konstruktorius** | Perima išteklius iš laikino objekto | Implementuotas |
-| **Move assignment** | Priskyrimo operatorius perkelti | Implementuotas |
-| **getInfo()** | Grąžina vardą ir pavardę (abstraktaus metodo realizacija) | Implementuotas |
-| **paskaiciuoti()** | Skaičiuoja galutinius rezultatus (abstraktaus metodo realizacija) | Implementuotas |
-
-### I/O Operatoriai (iš v1.2, išlaikyti)
-
-| Operatorius | Funkcija |
-|-------------|----------|
-| **operator<<** | Išveda studento duomenis (vardas, pavardė, egzaminas, rezultatai, pažymiai) |
-| **operator>>** | Nuskaitomas duomenis iš srauto (vardas, pavardė, 5 pažymiai, egzaminas) |
-
-### Programa - Meniu (iš v1.2, išlaikytas)
-
-| Opciją | Veikimas |
-|--------|----------|
-| 1 | Rankininis įvedimas (vardas, pavardė, 5 pažymiai, egzaminas) |
-| 2 | Generuoti tik pažymius |
-| 3 | Generuoti visus duomenis automatiškai |
-| 4 | Nuskaityti iš failo |
-| 5 | Sukurti testavimo failus |
-| 6 | Atlikti spartos analizę |
-| 7 | Baigti darbą |
-
-### v1.5 Pokyčiai vs v1.2
-
-| Elementas | v1.2 | v1.5 |
-|-----------|------|------|
-| **Klasių skaičius** | 1 (tik Studentas) | 2 (Žmogus + Studentas) |
-| **Paveldėjimas** | Nėra | Studentas paveldi iš Žmogaus |
-| **Abstrakti klasė** | Ne | Žmogus - abstrakti bazė |
-| **Žmogaus savybės** | Tiesiai Studentas klasėje | Perkeltos į Žmogus bazę |
-| **Rule of Five** | Implementuota | Išlaikyta |
-| **I/O operatoriai** | Yra | Išlaikyti |
-| **Veikimo logika** | Tokia pati | Identiška |
-| **Testai** | Veikia | Visi veikia nepakeisti |
-
-### Testai (iš v1.2, visi veikia v1.5)
-
-Visi v1.2 versijoje parašyti testai veikia ir v1.5 versijoje be jokių pakeitimų:
-
-| # | Aprašymas | Statusas |
-|---|-----------|----------|
-| 1-2 | Default ir parametrizuotas konstruktoriai | Veikia |
-| 3-4 | Copy konstruktorius ir assignment | Veikia |
-| 5-6 | Move konstruktorius ir assignment | Veikia |
-| 7 | Destruktorius (RAII) | Veikia |
-| 8-10 | I/O operatoriai ir round-trip testas | Veikia |
-| 11-13 | Getters/setters, vector operacijos | Veikia |
-
-### Veikimo Principas
-
-Programos logika išlieka ta pati kaip v1.2:
-
-1. Vartotojas pasirenka iš meniu (rankinis įvedimas, automatinė, iš failo, etc.)
-2. Nuskaito arba generuoja studentų duomenis
-3. Skaičiuoja galutinius rezultatus (vidurkis ir mediana)
-4. Rūšiuoja studentus pagal vardą, pavardę arba rezultatą
-5. Išveda rezultatus į ekraną arba failą
-
-**Svarbu:** Nuo v1.5 versijos, žmogaus savybės (vardas, pavardė) saugomos Žmogus bazinėje klasėje, o Studentas jas paveldi. Tai leidžia ateityje kurti kitas išvestines klases iš Žmogaus (pvz. Dėstytojas, Administratorius).
-
----
-
 ## v2.0 relisas: Unit Testai ir Doxygen Dokumentacija
 
-### v2.0 Novacijos
-
-v2.0 versija papildo v1.5 su akademiniais reikalavimais:
-
-| Komponentas | v1.5 | v2.0 |
-|-------------|------|------|
-| **Unit Testai** | Ne | ✅ 20 testų su Rule of Five |
-| **Doxygen Dokumentacija** | Ne | ✅ HTML ir PDF |
-| **CMake Build** | Bazinė | ✅ Su test target |
-| **Repo Tvarkymas** | Dalinai | ✅ Švari, be IDE failų |
-| **README Instrukcijos** | Nėra | ✅ Diegimas, paleidimas, testai |
-
-### Unit Testai (v2.0 nauja!)
-
-Parašyti **20 testų** naudojant `assert()` ir custom testavimo sistemą:
+### Unit Testai (v2.0)
 
 #### Rule of Five Metodai (pagrindiniai):
 
@@ -147,27 +40,6 @@ cd build
 cd build
 .\Release\test_programa.exe
 ```
-
-**Sėkmingo vykdymo rezultatas:**
-```
-============================================================
-  STUDENTAS KLASES VISOS METODU TESTAI
-  RULE OF FIVE DEMONTRACIJA
-============================================================
-[PRIIMTAS] Vardas inicijuotas i 'A'
-[PRIIMTAS] Pavarde inicijuota i 'BB'
-...
-[PRIIMTAS] Pazymiai pridedami teisingai
-
-============================================================
-TESTO REZULTATAI:
-Priimti testai: 87
-Nepriimti testai: 0
-============================================================
-
-VISI TESTAI PRIIMTI! Sveikiname su Rule of Five demontracija!
-```
-
 ### Doxygen Dokumentacija (v2.0 nauja!)
 
 Dokumentacija sugeneruojama iš source kodo komentarų:
@@ -274,24 +146,6 @@ doxygen Doxyfile
 | 5 | Sukurti testavimo failus |
 | 6 | Atlikti spartos analizę |
 | 7 | Baigti darbą |
-
-### Naudojimosi Pavyzdys
-
-```
-====== PAGRINDINIS MENIU ======
-1 - Rankininis ivedimas
-2 - Generuoti pažymius
-3 - Generuoti visus duomenis
-4 - Nuskaityti iš failo
-5 - Sukurti testavimo failus
-6 - Atlikti spartos analiz
-7 - Baigti darb
-Pasirinkite: 3
-Kiek studentų generuoti? 5
-Studentai sugeneruoti!
-```
-
----
 
 ## Projekto Failų Struktūra
 
