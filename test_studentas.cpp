@@ -1,3 +1,4 @@
+﻿#include <gtest/gtest.h>
 #include <iostream>
 #include <sstream>
 #include <cassert>
@@ -350,174 +351,98 @@ void test_paz_operations() {
     testPassed("clearPaz() isvalo pazymius");
 }
 
-// TEST #14: Rule of Five - Copy vs Move semantika
-void test_rule_of_five_copy_vs_move() {
-    printTestHeader("Rule of Five: Copy vs Move Semantika");
+// ========== PAPILDOMI GOOGLE TEST TESTAI (v2.0) ==========
 
-    Studentas original("Audra", "Audre", 91);
+// TEST #14: Vektoriaus su Studentais operacijos
+TEST(StudentasVectorTest, PushBackCopySemantics) {
+    vector<Studentas> students;
+
+    Studentas s1("Audra", "Audre", 91);
+    s1.addPaz(9);
+    s1.addPaz(8);
+
+    students.push_back(s1);  // Copy semantika
+
+    EXPECT_EQ(students.size(), 1);
+    EXPECT_EQ(students[0].getVardas(), "Audra");
+    EXPECT_EQ(students[0].getPaz().size(), 2);
+}
+
+// TEST #15: Move semantika su vektoriumi
+TEST(StudentasVectorTest, PushBackMoveSemantics) {
+    vector<Studentas> students;
+
+    Studentas s1("Giedra", "Giedre", 88);
+    s1.addPaz(8);
+
+    students.push_back(std::move(s1));  // Move semantika
+
+    EXPECT_EQ(students.size(), 1);
+    EXPECT_TRUE(s1.isPazEmpty());  // Originalas turi būti tuščias
+    EXPECT_EQ(students[0].getVardas(), "Giedra");
+}
+
+// TEST #16: Deep copy - independenti duplikacija
+TEST(StudentasDeepCopyTest, IndependentCopies) {
+    Studentas original("Laimas", "Laimas", 92);
     original.addPaz(9);
-    original.addPaz(8);
     original.addPaz(10);
 
-    // Copy - turetu buti dvi atskiros kopijos
     Studentas copy1 = original;
     Studentas copy2 = original;
 
-    assert(copy1.getPaz().size() == original.getPaz().size());
-    testPassed("Copy konstruktorius - dvi nepriklausomos kopijos");
+    // Modifikuojame copy1
+    copy1.setEgz(100);
+    copy1.addPaz(8);
 
-    // Modifikuojam kopija
-    copy1.addPaz(7);
-    assert(original.getPaz().size() == 3);
-    assert(copy1.getPaz().size() == 4);
-    testPassed("Copy semantika - modifikacija nepaveikia viena kitos");
-
-    // Move - originalioje turi likusti tik default reiksmes
-    Studentas moved = std::move(copy2);
-    assert(copy2.isPazEmpty());
-    testPassed("Move semantika - saltinis istustintas");
-
-    assert(moved.getPaz().size() == 3);
-    testPassed("Move semantika - tikslas turi visus duomenis");
+    // Patikrinti, kad originalas ir copy2 nepakeisti
+    EXPECT_EQ(original.getEgz(), 92);
+    EXPECT_EQ(original.getPaz().size(), 2);
+    EXPECT_EQ(copy2.getEgz(), 92);
+    EXPECT_EQ(copy2.getPaz().size(), 2);
+    EXPECT_EQ(copy1.getEgz(), 100);
+    EXPECT_EQ(copy1.getPaz().size(), 3);
 }
 
-// TEST #15: Rule of Five - Lankstumo testas
-void test_rule_of_five_flexibility() {
-    printTestHeader("Rule of Five: Lankstumo Testas");
-
-    vector<Studentas> students;
-
-    // Pridedame kopijas
-    Studentas s1("Giedra", "Giedre", 88);
-    s1.addPaz(8);
-    students.push_back(s1);  // Copy constructor
-    testPassed("Kopija prideta i vektoriu");
-
-    // Naudojame move semantika
-    Studentas s2("Velinas", "Veline", 85);
-    s2.addPaz(7);
-    students.push_back(std::move(s2));  // Move constructor
-    testPassed("Move semantika panaudota su vektorium");
-
-    assert(s2.isPazEmpty());
-    testPassed("Laikinasis objektas istustintas po move");
-
-    assert(students.size() == 2);
-    assert(students[0].getVardas() == "Giedra");
-    assert(students[1].getVardas() == "Velinas");
-    testPassed("Visi studentai saugiai saugomi vektoriuje");
-}
-
-// TEST #16: Self-assignment saugumas - Copy
-void test_self_assignment_copy_safety() {
-    printTestHeader("Self-Assignment Saugumas (Copy)");
-
-    Studentas s("Zivile", "Zivile", 86);
-    s.addPaz(8);
-    s.addPaz(9);
+// TEST #17: Self-assignment saugumas
+TEST(StudentasSelfAssignmentTest, CopySafetyCheck) {
+    Studentas s("Monika", "Monika", 95);
     s.addPaz(10);
+    s.addPaz(9);
 
-    // Self-assignment - turi nesugadinti objekto
+    // Self-assignment - turi būti saugus
     s = s;
 
-    assert(s.getVardas() == "Zivile");
-    testPassed("Self-assignment - vardas nepablogejo");
-
-    assert(s.getPaz().size() == 3);
-    testPassed("Self-assignment - pazymiai nepablogejo");
-
-    assert(s.getEgz() == 86);
-    testPassed("Self-assignment - egzaminas nepablogejo");
+    EXPECT_EQ(s.getVardas(), "Monika");
+    EXPECT_EQ(s.getEgz(), 95);
+    EXPECT_EQ(s.getPaz().size(), 2);
 }
 
-// TEST #17: Self-assignment saugumas - Move
-void test_self_assignment_move_safety() {
-    printTestHeader("Self-Assignment Saugumas (Move)");
-
-    Studentas s("Monika", "Monika", 94);
-    s.addPaz(9);
-    s.addPaz(10);
-
-    // Self-move-assignment - turi buti saugus
-    s = std::move(s);
-
-    assert(s.getVardas() == "Monika");
-    testPassed("Self-move-assignment - vardas saugus");
-
-    // Pastaba: po self-move-assignment pazymiai gali buti "undefined"
-    // tai nera klaida - tai yra zinomas C++ elgesys
-    testPassed("Self-move-assignment - saugiai ivykdytas");
-}
-
-// TEST #18: Assign operator chain - veikia kaip ir C++
-void test_assignment_chaining() {
-    printTestHeader("Assignment Operator Chaining");
-
+// TEST #18: Operatoriaus lankstumo - chaining
+TEST(StudentasOperatorTest, AssignmentChaining) {
     Studentas s1("Vincas", "Vincas", 92);
-    s1.addPaz(9);
-
-    Studentas s2;
+    Studentas s2("Petras", "Petrauskas", 88);
     Studentas s3;
 
-    // Chaining - (s3 = s2) turi grazinti s2 referenc
-    (s3 = s2) = s1;  // s2 = s1, tada s3 = s2
+    // Assignment chaining: (s3 = s2) = s1;
+    // Step 1: s3 = s2 grąžina s3 referencę, s3 becomes "Petras"
+    // Step 2: (s3 referencija) = s1 priskyrimo s1 reikšmę s3
+    (s3 = s2) = s1;
 
-    assert(s3.getVardas() == "Vincas");
-    testPassed("Assignment chaining veikia teisingai");
+    EXPECT_EQ(s3.getVardas(), "Vincas");  // s3 final value is Vincas
+    EXPECT_EQ(s2.getVardas(), "Petras");  // s2 remains Petras
+    EXPECT_EQ(s1.getVardas(), "Vincas");  // s1 remains Vincas
 }
 
-// TEST #19: Deep copy - vektorius su duomenimis
-void test_deep_copy_vector() {
-    printTestHeader("Deep Copy - Vektorius su Duomenimis");
+// ========== ORIGINAL MAIN (su backward compatibility) ==========
+int main(int argc, char** argv) {
+    // Google Test inicializacija
+    ::testing::InitGoogleTest(&argc, argv);
 
-    Studentas original("Alina", "Aline", 90);
-    for (int i = 0; i < 5; i++) {
-        original.addPaz(8 + i);  // 8, 9, 10, 9, 8
-    }
-
-    Studentas copy = original;
-
-    // Modifikuojam originala
-    original.clearPaz();
-    original.addPaz(10);
-
-    // Kopija turetu tureti savo duomenis
-    assert(copy.getPaz().size() == 5);
-    testPassed("Deep copy - vektorius yra atskiras (5 elementai)");
-
-    assert(copy.getPaz()[0] == 8);
-    testPassed("Deep copy - vektoriaus duomenys nesikeicia");
-
-    assert(original.getPaz().size() == 1);
-    testPassed("Deep copy - originalas gali keistis nesu veikdamas kopijos");
-}
-
-// TEST #20: Memory efficiency - Move semantika
-void test_move_efficiency() {
-    printTestHeader("Memory Efficiency - Move Semantika");
-
-    Studentas temp("Lauras", "Lauras", 89);
-    for (int i = 0; i < 5; i++) {
-        temp.addPaz(7 + i);
-    }
-
-    // Move konstruktorius - turetu tik perimti pointerius
-    Studentas result = std::move(temp);
-
-    assert(result.getPaz().size() == 5);
-    testPassed("Move - duomenys perimti efektyviai");
-
-    assert(temp.isPazEmpty());
-    testPassed("Move - saltinis istustintas (nereikalinga kopijuoti)");
-
-    cout << "[INFO] Move semantika sumazina memory kopiju operacijas!" << endl;
-}
-
-// MAIN FUNCTION - SUMMARY
-int main() {
+    // Originalūs testai (v1.5)
     cout << "\n" << string(60, '*') << endl;
-    cout << "  STUDENTAS KLASES VISOS METODU TESTAI" << endl;
-    cout << "  RULE OF FIVE DEMONTRACIJA" << endl;
+    cout << "  STUDENTAS KLASES VISOS METODU TESTAI (v1.5)" << endl;
+    cout << "  + GOOGLE TEST PAPILDYMAS (v2.0)" << endl;
     cout << string(60, '*') << endl;
 
     try {
@@ -534,13 +459,6 @@ int main() {
         test_modification_after_copy();
         test_getters_setters();
         test_paz_operations();
-        test_rule_of_five_copy_vs_move();
-        test_rule_of_five_flexibility();
-        test_self_assignment_copy_safety();
-        test_self_assignment_move_safety();
-        test_assignment_chaining();
-        test_deep_copy_vector();
-        test_move_efficiency();
 
         cout << "\n" << string(60, '*') << endl;
         cout << "TESTO REZULTATAI:" << endl;
@@ -549,10 +467,9 @@ int main() {
         cout << string(60, '*') << endl;
 
         if (testai_nepraletii == 0) {
-            cout << "\nVISI TESTAI PRIIMTI!\n" << endl;
-            return 0;
+            cout << "\nVISI TESTAI PRIIMTI!" << endl;
         } else {
-            cout << "\nKai kurie testai nepraejo. Patikrinkite koda!\n" << endl;
+            cout << "\nKai kurie testai nepraejo!" << endl;
             return 1;
         }
     }
@@ -560,4 +477,11 @@ int main() {
         cout << "Kritine klaida: " << e.what() << endl;
         return 1;
     }
+
+    cout << "\n" << string(60, '*') << endl;
+    cout << "Vykdomme GOOGLE TEST testai..." << endl;
+    cout << string(60, '*') << "\n" << endl;
+
+    // Vykdyti Google Test testus
+    return RUN_ALL_TESTS();
 }

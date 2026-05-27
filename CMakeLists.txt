@@ -33,15 +33,34 @@ set(SOURCES
 # Sukuriame ezkekutuojamąjį (executable) failą
 add_executable(programa ${SOURCES})
 
-# ===== TESTŲ PROGRAMA =====
-# Testų programa su visuomeninio testavimo palaikymą
-add_executable(test_programa 
-    test_studentas.cpp 
+# ===== GOOGLE TEST FRAMEWORK =====
+include(FetchContent)
+FetchContent_Declare(
+    googletest
+    GIT_REPOSITORY https://github.com/google/googletest.git
+    GIT_TAG v1.14.0
+)
+
+# Nustatyti Google Test runtime library (jungtis su MDd/MD)
+set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+set(CMAKE_POLICY_DEFAULT_CMP0091 NEW)
+if(MSVC)
+    set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreadedDebug$<$<CONFIG:Release>:>")
+endif()
+
+FetchContent_MakeAvailable(googletest)
+
+# ===== TESTŲ PROGRAMA SU GOOGLE TEST =====
+enable_testing()
+
+add_executable(test_programa
+    test_studentas.cpp
     extra_cpp/Zmogus.cpp
-    extra_cpp/Studentas.cpp 
+    extra_cpp/Studentas.cpp
     extra_cpp/mat_funkcijos.cpp
 )
 
-# Nustatome test_programa ketinamą jį vykdyti kaip testą (CTest)
-enable_testing()
+target_link_libraries(test_programa gtest gtest_main)
+
+# Registruoti testus CTest'e
 add_test(NAME StudentasTests COMMAND test_programa)
