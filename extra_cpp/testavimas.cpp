@@ -41,7 +41,7 @@ void sukurtiTestavimoFailus() {
     cout << "1. 1000 irasu\n";
     cout << "2. 10000 irasu\n";
     cout << "3. 100000 irasu\n";
-    cout << "4. 1 000000 irasu\n";
+    cout << "4. 1000000 irasu\n";
     cout << "5. 10000000 irasu\n";
     cout << "6. Visus auksciau isvardintus\n";
     cout << "Jusu pasirinkimas: ";
